@@ -1,0 +1,695 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Govinda Kumar | ECE Student & Developer</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <style>
+        * { font-family: 'Inter', sans-serif; }
+        h1, h2, h3, h4, h5, h6 { font-family: 'Space Grotesk', sans-serif; }
+        
+        ::-webkit-scrollbar { width: 8px; }
+        ::-webkit-scrollbar-track { background: #0f172a; }
+        ::-webkit-scrollbar-thumb { background: #3b82f6; border-radius: 4px; }
+        
+        @keyframes float {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-20px); }
+        }
+        @keyframes gradient-shift {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+        @keyframes slide-up {
+            from { opacity: 0; transform: translateY(30px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        
+        .animate-float { animation: float 6s ease-in-out infinite; }
+        .animate-slide-up { animation: slide-up 0.8s ease-out forwards; }
+        .gradient-text {
+            background: linear-gradient(135deg, #60a5fa 0%, #a78bfa 50%, #f472b6 100%);
+            background-size: 200% 200%;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            animation: gradient-shift 5s ease infinite;
+        }
+        .glass-card {
+            background: rgba(30, 41, 59, 0.7);
+            backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        .hover-lift {
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        .hover-lift:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+        }
+        .typing-cursor::after {
+            content: '|';
+            animation: blink 1s infinite;
+        }
+        @keyframes blink {
+            0%, 50% { opacity: 1; }
+            51%, 100% { opacity: 0; }
+        }
+        
+        #particles-canvas {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+            pointer-events: none;
+        }
+        
+        .code-block {
+            background: #1e293b;
+            border-radius: 0.5rem;
+            font-family: 'Courier New', monospace;
+            font-size: 0.875rem;
+        }
+    </style>
+<base target="_blank">
+</head>
+<body class="bg-slate-900 text-slate-100 overflow-x-hidden">
+
+    <canvas id="particles-canvas"></canvas>
+
+    <!-- Navigation -->
+    <nav class="fixed w-full z-50 top-0 transition-all duration-300" id="navbar">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-20">
+                <div class="flex-shrink-0 flex items-center">
+                    <span class="text-2xl font-bold gradient-text">&lt;Govinda/&gt;</span>
+                </div>
+                <div class="hidden md:block">
+                    <div class="ml-10 flex items-baseline space-x-8">
+                        <a href="#home" class="hover:text-blue-400 transition-colors px-3 py-2 rounded-md text-sm font-medium">Home</a>
+                        <a href="#about" class="hover:text-blue-400 transition-colors px-3 py-2 rounded-md text-sm font-medium">About</a>
+                        <a href="#projects" class="hover:text-blue-400 transition-colors px-3 py-2 rounded-md text-sm font-medium">Projects</a>
+                        <a href="#skills" class="hover:text-blue-400 transition-colors px-3 py-2 rounded-md text-sm font-medium">Skills</a>
+                        <a href="#contact" class="bg-blue-600 hover:bg-blue-700 text-white px-6 py-2 rounded-full text-sm font-medium transition-all hover:scale-105">Contact</a>
+                    </div>
+                </div>
+                <div class="md:hidden">
+                    <button id="mobile-menu-btn" class="text-gray-300 hover:text-white focus:outline-none">
+                        <i data-lucide="menu" class="w-6 h-6"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+        <div id="mobile-menu" class="hidden md:hidden glass-card absolute w-full">
+            <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3">
+                <a href="#home" class="block px-3 py-2 rounded-md text-base font-medium hover:text-blue-400">Home</a>
+                <a href="#about" class="block px-3 py-2 rounded-md text-base font-medium hover:text-blue-400">About</a>
+                <a href="#projects" class="block px-3 py-2 rounded-md text-base font-medium hover:text-blue-400">Projects</a>
+                <a href="#skills" class="block px-3 py-2 rounded-md text-base font-medium hover:text-blue-400">Skills</a>
+                <a href="#contact" class="block px-3 py-2 rounded-md text-base font-medium text-blue-400">Contact</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="min-h-screen flex items-center justify-center relative overflow-hidden pt-20">
+        <div class="absolute inset-0 bg-gradient-to-br from-blue-900/20 via-purple-900/20 to-slate-900/20"></div>
+        
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 text-center">
+            <div class="animate-slide-up">
+                <div class="inline-block px-4 py-2 rounded-full bg-blue-500/10 border border-blue-500/20 text-blue-400 text-sm font-medium mb-6">
+                    2nd Year ECE Student | Seeking Internship Opportunities
+                </div>
+                <h1 class="text-5xl md:text-7xl font-bold mb-6 leading-tight">
+                    Hi, I'm <span class="gradient-text typing-cursor" id="typing-text">Govinda Kumar</span>
+                </h1>
+                <p class="text-xl md:text-2xl text-slate-400 mb-8 max-w-2xl mx-auto">
+                    ECE Student | C++ | DSA | Web Developer<br>
+                    <span class="text-lg text-slate-500 mt-2 block">Passionate 2nd year ECE student interested in Software Development and Problem Solving</span>
+                </p>
+                <div class="flex flex-col sm:flex-row gap-4 justify-center items-center">
+                    <a href="#projects" class="bg-blue-600 hover:bg-blue-700 text-white px-8 py-4 rounded-full font-medium transition-all hover:scale-105 hover:shadow-lg hover:shadow-blue-500/25 flex items-center justify-center gap-2">
+                        View Projects
+                        <i data-lucide="arrow-down" class="w-4 h-4"></i>
+                    </a>
+                    <a href="resume.pdf" download class="border border-slate-600 hover:border-blue-400 text-slate-300 hover:text-white px-8 py-4 rounded-full font-medium transition-all hover:scale-105 flex items-center justify-center gap-2">
+                        <i data-lucide="download" class="w-5 h-5"></i>
+                        Download Resume
+                    </a>
+                </div>
+            </div>
+            
+            <div class="absolute top-20 left-10 w-20 h-20 bg-blue-500/20 rounded-full blur-xl animate-float"></div>
+            <div class="absolute bottom-20 right-10 w-32 h-32 bg-purple-500/20 rounded-full blur-xl animate-float" style="animation-delay: 2s;"></div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="py-20 relative">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid md:grid-cols-2 gap-12 items-center">
+                <div class="relative group order-2 md:order-1">
+                    <div class="absolute -inset-1 bg-gradient-to-r from-blue-600 to-purple-600 rounded-2xl blur opacity-25 group-hover:opacity-75 transition duration-1000"></div>
+                    <div class="relative glass-card rounded-2xl p-8 h-full">
+                        <div class="space-y-6">
+                            <div class="flex items-center gap-4">
+                                <div class="w-12 h-12 rounded-full bg-blue-500/20 flex items-center justify-center">
+                                    <i data-lucide="graduation-cap" class="w-6 h-6 text-blue-400"></i>
+                                </div>
+                                <div>
+                                    <h3 class="font-bold">Education</h3>
+                                    <p class="text-sm text-slate-400">B.Tech ECE, 2nd Year</p>
+                                </div>
+                            </div>
+                            <div class="flex items-center gap-4">
+                                <div class="w-12 h-12 rounded-full bg-purple-500/20 flex items-center justify-center">
+                                    <i data-lucide="code-2" class="w-6 h-6 text-purple-400"></i>
+                                </div>
+                                <div>
+                                    <h3 class="font-bold">Focus Areas</h3>
+                                    <p class="text-sm text-slate-400">DSA, Web Development, Problem Solving</p>
+                                </div>
+                            </div>
+                            <div class="flex items-center gap-4">
+                                <div class="w-12 h-12 rounded-full bg-pink-500/20 flex items-center justify-center">
+                                    <i data-lucide="target" class="w-6 h-6 text-pink-400"></i>
+                                </div>
+                                <div>
+                                    <h3 class="font-bold">Goal</h3>
+                                    <p class="text-sm text-slate-400">Seeking Internship Opportunities</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="order-1 md:order-2">
+                    <h2 class="text-3xl md:text-4xl font-bold mb-6">About Me</h2>
+                    <p class="text-slate-400 text-lg mb-6 leading-relaxed">
+                        I'm Govinda Kumar, a 2nd year Electronics and Communication Engineering (ECE) student passionate about software development and problem solving.
+                    </p>
+                    <p class="text-slate-400 text-lg mb-6 leading-relaxed">
+                        Currently learning Data Structures & Algorithms and Web Development. I enjoy building projects that solve real-world problems using C++ and modern web technologies.
+                    </p>
+                    <p class="text-slate-400 text-lg mb-8 leading-relaxed">
+                        I'm actively looking for internship opportunities to apply my skills and gain industry experience in software development.
+                    </p>
+                    
+                    <div class="grid grid-cols-2 gap-6">
+                        <div class="glass-card p-4 rounded-xl border-l-4 border-blue-500">
+                            <h3 class="text-2xl font-bold text-white mb-1">ECE</h3>
+                            <p class="text-slate-400 text-sm">2nd Year B.Tech</p>
+                        </div>
+                        <div class="glass-card p-4 rounded-xl border-l-4 border-purple-500">
+                            <h3 class="text-2xl font-bold text-white mb-1">Open to</h3>
+                            <p class="text-slate-400 text-sm">Internships</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects" class="py-20 relative">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold mb-4">Featured Projects</h2>
+                <p class="text-slate-400 max-w-2xl mx-auto">Building projects to strengthen my development skills</p>
+            </div>
+
+            <div class="grid lg:grid-cols-3 gap-8">
+                
+                <!-- Project 1: To-Do List -->
+                <div class="group relative">
+                    <div class="absolute -inset-0.5 bg-gradient-to-r from-purple-600 to-pink-600 rounded-2xl blur opacity-30 group-hover:opacity-100 transition duration-1000"></div>
+                    <div class="relative glass-card rounded-2xl overflow-hidden hover-lift h-full flex flex-col">
+                        <div class="h-48 bg-gradient-to-br from-slate-800 to-slate-900 flex items-center justify-center relative overflow-hidden">
+                            <i data-lucide="check-square" class="w-16 h-16 text-purple-400 relative z-10"></i>
+                            <div class="absolute inset-0 bg-purple-500/10"></div>
+                        </div>
+                        <div class="p-6 flex-1 flex flex-col">
+                            <div class="flex justify-between items-start mb-3 flex-wrap gap-2">
+                                <h3 class="text-xl font-bold group-hover:text-purple-400 transition-colors">To-Do List Web App</h3>
+                                <div class="flex gap-1">
+                                    <span class="px-2 py-1 bg-purple-500/20 text-purple-400 rounded text-xs">HTML</span>
+                                    <span class="px-2 py-1 bg-pink-500/20 text-pink-400 rounded text-xs">CSS</span>
+                                    <span class="px-2 py-1 bg-yellow-500/20 text-yellow-400 rounded text-xs">JS</span>
+                                </div>
+                            </div>
+                            <p class="text-slate-400 text-sm mb-4 flex-1">
+                                A fully functional task management application with Local Storage persistence. Features add, delete, mark complete, and clear all functionality.
+                            </p>
+                            
+                            <div class="space-y-2 mb-4">
+                                <div class="flex items-center gap-2 text-xs text-slate-300">
+                                    <i data-lucide="check-circle" class="w-3 h-3 text-purple-400"></i>
+                                    <span>Local Storage Integration</span>
+                                </div>
+                                <div class="flex items-center gap-2 text-xs text-slate-300">
+                                    <i data-lucide="check-circle" class="w-3 h-3 text-purple-400"></i>
+                                    <span>Responsive Design</span>
+                                </div>
+                                <div class="flex items-center gap-2 text-xs text-slate-300">
+                                    <i data-lucide="check-circle" class="w-3 h-3 text-purple-400"></i>
+                                    <span>CRUD Operations</span>
+                                </div>
+                            </div>
+
+                            <div class="flex gap-2 mt-auto">
+                                <a href="https://coder-g45.github.io/todo-list-project/" target="_self" class="flex-1 bg-purple-600 hover:bg-purple-700 text-white py-2 rounded-lg text-center text-sm font-medium transition-colors flex items-center justify-center gap-2">
+                                    Live Demo
+                                    <i data-lucide="external-link" class="w-3 h-3"></i>
+                                </a>
+                                <a href="https://github.com/CODER-G45/todo-list-project" target="_blank" class="px-3 py-2 border border-slate-600 hover:border-purple-400 text-slate-300 hover:text-white rounded-lg transition-colors">
+                                    <i data-lucide="github" class="w-4 h-4"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project 2: Student Management System -->
+                <div class="group relative">
+                    <div class="absolute -inset-0.5 bg-gradient-to-r from-blue-600 to-indigo-600 rounded-2xl blur opacity-30 group-hover:opacity-100 transition duration-1000"></div>
+                    <div class="relative glass-card rounded-2xl overflow-hidden hover-lift h-full flex flex-col">
+                        <div class="h-48 bg-gradient-to-br from-slate-800 to-slate-900 flex items-center justify-center relative overflow-hidden">
+                            <i data-lucide="users" class="w-16 h-16 text-blue-400 relative z-10"></i>
+                            <div class="absolute inset-0 bg-blue-500/10"></div>
+                        </div>
+                        <div class="p-6 flex-1 flex flex-col">
+                            <div class="flex justify-between items-start mb-3">
+                                <h3 class="text-xl font-bold group-hover:text-blue-400 transition-colors">Student Management System</h3>
+                                <span class="px-3 py-1 bg-blue-500/20 text-blue-400 rounded-full text-xs font-medium">C++</span>
+                            </div>
+                            <p class="text-slate-400 text-sm mb-4 flex-1">
+                                Console-based application using C++ OOP concepts. Manages student records with features to add, search, delete, and display students with grade calculation.
+                            </p>
+                            
+                            <div class="space-y-2 mb-4">
+                                <div class="flex items-center gap-2 text-xs text-slate-300">
+                                    <i data-lucide="check-circle" class="w-3 h-3 text-blue-400"></i>
+                                    <span>Classes & Objects (OOP)</span>
+                                </div>
+                                <div class="flex items-center gap-2 text-xs text-slate-300">
+                                    <i data-lucide="check-circle" class="w-3 h-3 text-blue-400"></i>
+                                    <span>Array of Structures</span>
+                                </div>
+                                <div class="flex items-center gap-2 text-xs text-slate-300">
+                                    <i data-lucide="check-circle" class="w-3 h-3 text-blue-400"></i>
+                                    <span>File Operations (Optional)</span>
+                                </div>
+                            </div>
+
+                            <div class="bg-slate-800 rounded p-2 mb-4 font-mono text-xs text-slate-400">
+                                <div class="text-green-400">$ ./student_mgmt</div>
+                                <div>1. Add Student</div>
+                                <div>2. Display All</div>
+                                <div>3. Search | 4. Delete</div>
+                            </div>
+
+                            <div class="flex gap-2 mt-auto">
+                                <a href="https://github.com/CODER-G45/student-management-system" target="_blank" class="flex-1 bg-blue-600 hover:bg-blue-700 text-white py-2 rounded-lg text-center text-sm font-medium transition-colors flex items-center justify-center gap-2">
+                                    View Code
+                                    <i data-lucide="github" class="w-4 h-4"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project 3: Sudoku Solver -->
+                <div class="group relative">
+                    <div class="absolute -inset-0.5 bg-gradient-to-r from-cyan-500 to-blue-600 rounded-2xl blur opacity-30 group-hover:opacity-100 transition duration-1000"></div>
+                    <div class="relative glass-card rounded-2xl overflow-hidden hover-lift h-full flex flex-col">
+                        <div class="h-48 bg-gradient-to-br from-slate-800 to-slate-900 flex items-center justify-center relative overflow-hidden">
+                            <div class="absolute inset-0 opacity-20">
+                                <div class="grid grid-cols-3 gap-1 w-24 h-24 mx-auto">
+                                    <div class="bg-cyan-500/30 rounded"></div><div class="bg-cyan-500/50 rounded"></div><div class="bg-cyan-500/30 rounded"></div>
+                                    <div class="bg-cyan-500/50 rounded"></div><div class="bg-cyan-500/30 rounded"></div><div class="bg-cyan-500/50 rounded"></div>
+                                    <div class="bg-cyan-500/30 rounded"></div><div class="bg-cyan-500/50 rounded"></div><div class="bg-cyan-500/30 rounded"></div>
+                                </div>
+                            </div>
+                            <i data-lucide="grid-3x3" class="w-16 h-16 text-cyan-400 relative z-10"></i>
+                        </div>
+                        <div class="p-6 flex-1 flex flex-col">
+                            <div class="flex justify-between items-start mb-3">
+                                <h3 class="text-xl font-bold group-hover:text-cyan-400 transition-colors">Sudoku Solver</h3>
+                                <span class="px-3 py-1 bg-cyan-500/20 text-cyan-400 rounded-full text-xs font-medium">C++</span>
+                            </div>
+                            <p class="text-slate-400 text-sm mb-4 flex-1">
+                                Algorithmic implementation using backtracking algorithm to solve 9x9 Sudoku puzzles efficiently. Demonstrates understanding of recursion and constraint satisfaction.
+                            </p>
+                            
+                            <div class="space-y-2 mb-4">
+                                <div class="flex items-center gap-2 text-xs text-slate-300">
+                                    <i data-lucide="check-circle" class="w-3 h-3 text-cyan-400"></i>
+                                    <span>Backtracking Algorithm</span>
+                                </div>
+                                <div class="flex items-center gap-2 text-xs text-slate-300">
+                                    <i data-lucide="check-circle" class="w-3 h-3 text-cyan-400"></i>
+                                    <span>Recursion</span>
+                                </div>
+                                <div class="flex items-center gap-2 text-xs text-slate-300">
+                                    <i data-lucide="check-circle" class="w-3 h-3 text-cyan-400"></i>
+                                    <span>2D Array Manipulation</span>
+                                </div>
+                            </div>
+
+                            <div class="flex gap-2 mt-auto">
+                                <a href="https://coder-g45.github.io/suduko-solver-web/" target="_blank" class="flex-1 bg-cyan-600 hover:bg-cyan-700 text-white py-2 rounded-lg text-center text-sm font-medium transition-colors flex items-center justify-center gap-2">
+                                    View Code
+                                    <i data-lucide="github" class="w-4 h-4"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section id="skills" class="py-20 relative bg-slate-800/30">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold mb-4">Technical Skills</h2>
+                <p class="text-slate-400">Technologies I work with</p>
+            </div>
+
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+                <!-- Programming Languages -->
+                <div class="glass-card rounded-2xl p-6 hover-lift">
+                    <div class="w-12 h-12 bg-blue-500/20 rounded-xl flex items-center justify-center mb-4">
+                        <i data-lucide="code-2" class="w-6 h-6 text-blue-400"></i>
+                    </div>
+                    <h3 class="text-lg font-bold mb-4">Languages</h3>
+                    <div class="space-y-3">
+                        <div>
+                            <div class="flex justify-between text-sm mb-1">
+                                <span class="text-slate-300">C++</span>
+                                <span class="text-blue-400">Intermediate</span>
+                            </div>
+                            <div class="w-full h-2 bg-slate-700 rounded-full overflow-hidden">
+                                <div class="h-full bg-blue-500 rounded-full" style="width: 85%"></div>
+                            </div>
+                        </div>
+                        <div>
+                            <div class="flex justify-between text-sm mb-1">
+                                <span class="text-slate-300">JavaScript</span>
+                                <span class="text-blue-400">Intermediate</span>
+                            </div>
+                            <div class="w-full h-2 bg-slate-700 rounded-full overflow-hidden">
+                                <div class="h-full bg-yellow-500 rounded-full" style="width: 75%"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Web Development -->
+                <div class="glass-card rounded-2xl p-6 hover-lift">
+                    <div class="w-12 h-12 bg-purple-500/20 rounded-xl flex items-center justify-center mb-4">
+                        <i data-lucide="globe" class="w-6 h-6 text-purple-400"></i>
+                    </div>
+                    <h3 class="text-lg font-bold mb-4">Web Development</h3>
+                    <div class="flex flex-wrap gap-2">
+                        <span class="px-3 py-1 bg-slate-800 rounded-full text-sm text-slate-300 border border-slate-700">HTML5</span>
+                        <span class="px-3 py-1 bg-slate-800 rounded-full text-sm text-slate-300 border border-slate-700">CSS3</span>
+                        <span class="px-3 py-1 bg-slate-800 rounded-full text-sm text-slate-300 border border-slate-700">Responsive Design</span>
+                        <span class="px-3 py-1 bg-slate-800 rounded-full text-sm text-slate-300 border border-slate-700">DOM Manipulation</span>
+                    </div>
+                </div>
+
+                <!-- DSA -->
+                <div class="glass-card rounded-2xl p-6 hover-lift">
+                    <div class="w-12 h-12 bg-cyan-500/20 rounded-xl flex items-center justify-center mb-4">
+                        <i data-lucide="git-branch" class="w-6 h-6 text-cyan-400"></i>
+                    </div>
+                    <h3 class="text-lg font-bold mb-4">DSA & CS Fundamentals</h3>
+                    <div class="flex flex-wrap gap-2">
+                        <span class="px-3 py-1 bg-slate-800 rounded-full text-sm text-slate-300 border border-slate-700">Arrays</span>
+                        <span class="px-3 py-1 bg-slate-800 rounded-full text-sm text-slate-300 border border-slate-700">Recursion</span>
+                        <span class="px-3 py-1 bg-slate-800 rounded-full text-sm text-slate-300 border border-slate-700">Backtracking</span>
+                        <span class="px-3 py-1 bg-slate-800 rounded-full text-sm text-slate-300 border border-slate-700">OOP</span>
+                    </div>
+                </div>
+
+                <!-- Tools -->
+                <div class="glass-card rounded-2xl p-6 hover-lift">
+                    <div class="w-12 h-12 bg-pink-500/20 rounded-xl flex items-center justify-center mb-4">
+                        <i data-lucide="wrench" class="w-6 h-6 text-pink-400"></i>
+                    </div>
+                    <h3 class="text-lg font-bold mb-4">Tools & Platforms</h3>
+                    <ul class="space-y-3 text-slate-300 text-sm">
+                        <li class="flex items-center gap-2">
+                            <i data-lucide="check" class="w-4 h-4 text-pink-400"></i>
+                            Git & GitHub
+                        </li>
+                        <li class="flex items-center gap-2">
+                            <i data-lucide="check" class="w-4 h-4 text-pink-400"></i>
+                            VS Code
+                        </li>
+                        <li class="flex items-center gap-2">
+                            <i data-lucide="check" class="w-4 h-4 text-pink-400"></i>
+                            Command Line
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Soft Skills -->
+                <div class="glass-card rounded-2xl p-6 hover-lift lg:col-span-2">
+                    <div class="w-12 h-12 bg-green-500/20 rounded-xl flex items-center justify-center mb-4">
+                        <i data-lucide="users" class="w-6 h-6 text-green-400"></i>
+                    </div>
+                    <h3 class="text-lg font-bold mb-4">Professional Skills</h3>
+                    <div class="grid md:grid-cols-3 gap-4">
+                        <div class="text-center p-3 bg-slate-800/50 rounded-lg">
+                            <i data-lucide="lightbulb" class="w-6 h-6 text-green-400 mx-auto mb-2"></i>
+                            <p class="text-sm text-slate-300">Problem Solving</p>
+                        </div>
+                        <div class="text-center p-3 bg-slate-800/50 rounded-lg">
+                            <i data-lucide="book-open" class="w-6 h-6 text-green-400 mx-auto mb-2"></i>
+                            <p class="text-sm text-slate-300">Quick Learner</p>
+                        </div>
+                        <div class="text-center p-3 bg-slate-800/50 rounded-lg">
+                            <i data-lucide="message-circle" class="w-6 h-6 text-green-400 mx-auto mb-2"></i>
+                            <p class="text-sm text-slate-300">Communication</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-20 relative">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="glass-card rounded-2xl p-8 md:p-12 text-center">
+                <h2 class="text-3xl md:text-4xl font-bold mb-4">Let's Connect</h2>
+                <p class="text-slate-400 mb-8">Interested in discussing projects, opportunities, or collaborations? Reach out!</p>
+                
+                <div class="grid md:grid-cols-2 gap-6 mb-8 text-left">
+                    <a href="mailto:govindkumarcai123@gmail.com" class="flex items-center gap-4 p-4 bg-slate-800/50 rounded-xl hover:bg-slate-800 transition-colors group">
+                        <div class="w-12 h-12 bg-red-500/20 rounded-full flex items-center justify-center group-hover:bg-red-500/30 transition-colors">
+                            <i data-lucide="mail" class="w-6 h-6 text-red-400"></i>
+                        </div>
+                        <div>
+                            <p class="text-sm text-slate-400">Email</p>
+                            <p class="text-white font-medium">govindkumarcai123@gmail.com</p>
+                        </div>
+                    </a>
+                    
+                    <a href="https://github.com/CODER-G45" target="_blank" class="flex items-center gap-4 p-4 bg-slate-800/50 rounded-xl hover:bg-slate-800 transition-colors group">
+                        <div class="w-12 h-12 bg-gray-500/20 rounded-full flex items-center justify-center group-hover:bg-gray-500/30 transition-colors">
+                            <i data-lucide="github" class="w-6 h-6 text-gray-300"></i>
+                        </div>
+                        <div>
+                            <p class="text-sm text-slate-400">GitHub</p>
+                            <p class="text-white font-medium">github.com/CODER-G45</p>
+                        </div>
+                    </a>
+                </div>
+
+                <div class="flex justify-center gap-6">
+                    <a href="https://github.com/CODER-G45" target="_blank" class="w-12 h-12 rounded-full bg-slate-800 flex items-center justify-center hover:bg-blue-600 transition-colors text-slate-400 hover:text-white">
+                        <i data-lucide="github" class="w-5 h-5"></i>
+                    </a>
+                    <a href="mailto:govindkumarcai123@gmail.com" class="w-12 h-12 rounded-full bg-slate-800 flex items-center justify-center hover:bg-red-600 transition-colors text-slate-400 hover:text-white">
+                        <i data-lucide="mail" class="w-5 h-5"></i>
+                    </a>
+                    <a href="#" class="w-12 h-12 rounded-full bg-slate-800 flex items-center justify-center hover:bg-blue-700 transition-colors text-slate-400 hover:text-white" title="LinkedIn (Add your URL)">
+                        <i data-lucide="linkedin" class="w-5 h-5"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="py-8 border-t border-slate-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col md:flex-row justify-between items-center gap-4">
+            <p class="text-slate-500 text-sm">© 2026 Govinda Kumar | Portfolio</p>
+            <div class="flex items-center gap-6 text-slate-400 text-sm">
+                <a href="https://github.com/CODER-G45" target="_blank" class="hover:text-white transition-colors">GitHub</a>
+                <a href="#home" class="hover:text-white transition-colors">Back to Top</a>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Initialize Lucide Icons
+        lucide.createIcons();
+
+        // Typing Effect
+        const words = ['Govinda Kumar', 'ECE Student', 'Problem Solver', 'Developer', 'Coder'];
+        let wordIndex = 0;
+        let charIndex = 0;
+        let isDeleting = false;
+        const typingElement = document.getElementById('typing-text');
+
+        function typeEffect() {
+            const currentWord = words[wordIndex];
+            
+            if (isDeleting) {
+                typingElement.textContent = currentWord.substring(0, charIndex - 1);
+                charIndex--;
+            } else {
+                typingElement.textContent = currentWord.substring(0, charIndex + 1);
+                charIndex++;
+            }
+
+            let typeSpeed = isDeleting ? 50 : 100;
+
+            if (!isDeleting && charIndex === currentWord.length) {
+                typeSpeed = 2000;
+                isDeleting = true;
+            } else if (isDeleting && charIndex === 0) {
+                isDeleting = false;
+                wordIndex = (wordIndex + 1) % words.length;
+                typeSpeed = 500;
+            }
+
+            setTimeout(typeEffect, typeSpeed);
+        }
+        typeEffect();
+
+        // Mobile Menu
+        const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+        
+        mobileMenuBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        // Navbar scroll effect
+        const navbar = document.getElementById('navbar');
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 50) {
+                navbar.classList.add('glass-card');
+            } else {
+                navbar.classList.remove('glass-card');
+            }
+        });
+
+        // Particle Background
+        const canvas = document.getElementById('particles-canvas');
+        const ctx = canvas.getContext('2d');
+        
+        let width, height;
+        let particles = [];
+        
+        function resize() {
+            width = canvas.width = window.innerWidth;
+            height = canvas.height = window.innerHeight;
+        }
+        
+        class Particle {
+            constructor() {
+                this.x = Math.random() * width;
+                this.y = Math.random() * height;
+                this.vx = (Math.random() - 0.5) * 0.5;
+                this.vy = (Math.random() - 0.5) * 0.5;
+                this.size = Math.random() * 2;
+                this.opacity = Math.random() * 0.5 + 0.1;
+            }
+            
+            update() {
+                this.x += this.vx;
+                this.y += this.vy;
+                
+                if (this.x < 0 || this.x > width) this.vx *= -1;
+                if (this.y < 0 || this.y > height) this.vy *= -1;
+            }
+            
+            draw() {
+                ctx.fillStyle = `rgba(148, 163, 184, ${this.opacity})`;
+                ctx.beginPath();
+                ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
+                ctx.fill();
+            }
+        }
+        
+        function initParticles() {
+            particles = [];
+            const particleCount = Math.min(window.innerWidth / 10, 100);
+            for (let i = 0; i < particleCount; i++) {
+                particles.push(new Particle());
+            }
+        }
+        
+        function animateParticles() {
+            ctx.clearRect(0, 0, width, height);
+            
+            particles.forEach((particle, i) => {
+                particle.update();
+                particle.draw();
+                
+                particles.slice(i + 1).forEach(other => {
+                    const dx = particle.x - other.x;
+                    const dy = particle.y - other.y;
+                    const distance = Math.sqrt(dx * dx + dy * dy);
+                    
+                    if (distance < 100) {
+                        ctx.strokeStyle = `rgba(148, 163, 184, ${0.1 * (1 - distance / 100)})`;
+                        ctx.lineWidth = 0.5;
+                        ctx.beginPath();
+                        ctx.moveTo(particle.x, particle.y);
+                        ctx.lineTo(other.x, other.y);
+                        ctx.stroke();
+                    }
+                });
+            });
+            
+            requestAnimationFrame(animateParticles);
+        }
+        
+        window.addEventListener('resize', () => {
+            resize();
+            initParticles();
+        });
+        
+        resize();
+        initParticles();
+        animateParticles();
+
+        // Smooth scroll
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                }
+            });
+        });
+    </script>
+</body>
+</html>
