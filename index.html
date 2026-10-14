@@ -4,11 +4,17 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Govinda Kumar | ECE Student & Developer</title>
+    <meta name="description" content="Govinda Kumar - 3rd year ECE student at Haldia Institute of Technology. C++, DSA and web development projects. Open to internships.">
+    <meta property="og:title" content="Govinda Kumar | ECE Student & Developer">
+    <meta property="og:description" content="C++, DSA and web development projects. Open to internships.">
+    <meta property="og:type" content="website">
+    <meta name="theme-color" content="#0f172a">
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>&#128187;</text></svg>">
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
-    <script src="https://unpkg.com/lucide@latest"></script>
+    <script src="https://unpkg.com/lucide@0.460.0"></script>
     <style>
         * { font-family: 'Inter', sans-serif; }
         h1, h2, h3, h4, h5, h6 { font-family: 'Space Grotesk', sans-serif; }
@@ -71,6 +77,10 @@
             pointer-events: none;
         }
         
+        @media (prefers-reduced-motion: reduce) {
+            *, *::before, *::after { animation: none !important; transition: none !important; }
+        }
+        a:focus-visible, button:focus-visible { outline: 2px solid #60a5fa; outline-offset: 2px; }
         .code-block {
             background: #1e293b;
             border-radius: 0.5rem;
@@ -101,7 +111,7 @@
                     </div>
                 </div>
                 <div class="md:hidden">
-                    <button id="mobile-menu-btn" class="text-gray-300 hover:text-white focus:outline-none">
+                    <button id="mobile-menu-btn" aria-label="Toggle menu" aria-expanded="false" class="text-gray-300 hover:text-white focus:outline-none">
                         <i data-lucide="menu" class="w-6 h-6"></i>
                     </button>
                 </div>
@@ -125,21 +135,21 @@
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 text-center">
             <div class="animate-slide-up">
                 <div class="inline-block px-4 py-2 rounded-full bg-blue-500/10 border border-blue-500/20 text-blue-400 text-sm font-medium mb-6">
-                    2nd Year ECE Student | Seeking Internship Opportunities
+                    3rd Year ECE Student | Seeking Internship Opportunities
                 </div>
                 <h1 class="text-5xl md:text-7xl font-bold mb-6 leading-tight">
                     Hi, I'm <span class="gradient-text typing-cursor" id="typing-text">Govinda Kumar</span>
                 </h1>
                 <p class="text-xl md:text-2xl text-slate-400 mb-8 max-w-2xl mx-auto">
                     ECE Student | C++ | DSA | Web Developer<br>
-                    <span class="text-lg text-slate-500 mt-2 block">Passionate 2nd year ECE student interested in Software Development and Problem Solving</span>
+                    <span class="text-lg text-slate-500 mt-2 block">I solve problems with C++ and build clean, responsive web apps. Currently looking for a software development internship.</span>
                 </p>
                 <div class="flex flex-col sm:flex-row gap-4 justify-center items-center">
                     <a href="#projects" class="bg-blue-600 hover:bg-blue-700 text-white px-8 py-4 rounded-full font-medium transition-all hover:scale-105 hover:shadow-lg hover:shadow-blue-500/25 flex items-center justify-center gap-2">
                         View Projects
                         <i data-lucide="arrow-down" class="w-4 h-4"></i>
                     </a>
-                    <a href="resume.pdf" download class="border border-slate-600 hover:border-blue-400 text-slate-300 hover:text-white px-8 py-4 rounded-full font-medium transition-all hover:scale-105 flex items-center justify-center gap-2">
+                    <a href="resume.pdf" download="Govinda_Kumar_Resume.pdf" class="border border-slate-600 hover:border-blue-400 text-slate-300 hover:text-white px-8 py-4 rounded-full font-medium transition-all hover:scale-105 flex items-center justify-center gap-2">
                         <i data-lucide="download" class="w-5 h-5"></i>
                         Download Resume
                     </a>
@@ -165,7 +175,7 @@
                                 </div>
                                 <div>
                                     <h3 class="font-bold">Education</h3>
-                                    <p class="text-sm text-slate-400">B.Tech ECE, 2nd Year</p>
+                                    <p class="text-sm text-slate-400">B.Tech ECE, Haldia Institute of Technology (3rd Year)</p>
                                 </div>
                             </div>
                             <div class="flex items-center gap-4">
@@ -193,10 +203,10 @@
                 <div class="order-1 md:order-2">
                     <h2 class="text-3xl md:text-4xl font-bold mb-6">About Me</h2>
                     <p class="text-slate-400 text-lg mb-6 leading-relaxed">
-                        I'm Govinda Kumar, a 2nd year Electronics and Communication Engineering (ECE) student passionate about software development and problem solving.
+                        I'm Govinda Kumar, a 3rd year Electronics and Communication Engineering (ECE) student passionate about software development and problem solving.
                     </p>
                     <p class="text-slate-400 text-lg mb-6 leading-relaxed">
-                        Currently learning Data Structures & Algorithms and Web Development. I enjoy building projects that solve real-world problems using C++ and modern web technologies.
+                        Strengthening my Data Structures & Algorithms and web development skills through hands-on projects. I enjoy building projects that solve real-world problems using C++ and modern web technologies.
                     </p>
                     <p class="text-slate-400 text-lg mb-8 leading-relaxed">
                         I'm actively looking for internship opportunities to apply my skills and gain industry experience in software development.
@@ -204,12 +214,12 @@
                     
                     <div class="grid grid-cols-2 gap-6">
                         <div class="glass-card p-4 rounded-xl border-l-4 border-blue-500">
-                            <h3 class="text-2xl font-bold text-white mb-1">ECE</h3>
-                            <p class="text-slate-400 text-sm">2nd Year B.Tech</p>
+                            <h3 class="text-2xl font-bold text-white mb-1">8.6</h3>
+                            <p class="text-slate-400 text-sm">CGPA, B.Tech ECE</p>
                         </div>
                         <div class="glass-card p-4 rounded-xl border-l-4 border-purple-500">
-                            <h3 class="text-2xl font-bold text-white mb-1">Open to</h3>
-                            <p class="text-slate-400 text-sm">Internships</p>
+                            <h3 class="text-2xl font-bold text-white mb-1">3+</h3>
+                            <p class="text-slate-400 text-sm">Projects on GitHub</p>
                         </div>
                     </div>
                 </div>
@@ -264,7 +274,7 @@
                             </div>
 
                             <div class="flex gap-2 mt-auto">
-                                <a href="https://coder-g45.github.io/todo-list-project/" target="_self" class="flex-1 bg-purple-600 hover:bg-purple-700 text-white py-2 rounded-lg text-center text-sm font-medium transition-colors flex items-center justify-center gap-2">
+                                <a href="https://coder-g45.github.io/todo-list-project/" target="_blank" rel="noopener" class="flex-1 bg-purple-600 hover:bg-purple-700 text-white py-2 rounded-lg text-center text-sm font-medium transition-colors flex items-center justify-center gap-2">
                                     Live Demo
                                     <i data-lucide="external-link" class="w-3 h-3"></i>
                                 </a>
@@ -304,7 +314,7 @@
                                 </div>
                                 <div class="flex items-center gap-2 text-xs text-slate-300">
                                     <i data-lucide="check-circle" class="w-3 h-3 text-blue-400"></i>
-                                    <span>File Operations (Optional)</span>
+                                    <span>Search, Delete &amp; Grade Calculation</span>
                                 </div>
                             </div>
 
@@ -364,9 +374,9 @@
                             </div>
 
                             <div class="flex gap-2 mt-auto">
-                                <a href="https://coder-g45.github.io/suduko-solver-web/" target="_blank" class="flex-1 bg-cyan-600 hover:bg-cyan-700 text-white py-2 rounded-lg text-center text-sm font-medium transition-colors flex items-center justify-center gap-2">
-                                    View Code
-                                    <i data-lucide="github" class="w-4 h-4"></i>
+                                <a href="https://coder-g45.github.io/suduko-solver-web/" target="_blank" rel="noopener" class="flex-1 bg-cyan-600 hover:bg-cyan-700 text-white py-2 rounded-lg text-center text-sm font-medium transition-colors flex items-center justify-center gap-2">
+                                    Live Demo
+                                    <i data-lucide="external-link" class="w-3 h-3"></i>
                                 </a>
                             </div>
                         </div>
@@ -392,25 +402,9 @@
                         <i data-lucide="code-2" class="w-6 h-6 text-blue-400"></i>
                     </div>
                     <h3 class="text-lg font-bold mb-4">Languages</h3>
-                    <div class="space-y-3">
-                        <div>
-                            <div class="flex justify-between text-sm mb-1">
-                                <span class="text-slate-300">C++</span>
-                                <span class="text-blue-400">Intermediate</span>
-                            </div>
-                            <div class="w-full h-2 bg-slate-700 rounded-full overflow-hidden">
-                                <div class="h-full bg-blue-500 rounded-full" style="width: 85%"></div>
-                            </div>
-                        </div>
-                        <div>
-                            <div class="flex justify-between text-sm mb-1">
-                                <span class="text-slate-300">JavaScript</span>
-                                <span class="text-blue-400">Intermediate</span>
-                            </div>
-                            <div class="w-full h-2 bg-slate-700 rounded-full overflow-hidden">
-                                <div class="h-full bg-yellow-500 rounded-full" style="width: 75%"></div>
-                            </div>
-                        </div>
+                    <div class="flex flex-wrap gap-2">
+                        <span class="px-3 py-1 bg-slate-800 rounded-full text-sm text-slate-300 border border-slate-700">C++</span>
+                        <span class="px-3 py-1 bg-slate-800 rounded-full text-sm text-slate-300 border border-slate-700">JavaScript</span>
                     </div>
                 </div>
 
@@ -425,6 +419,7 @@
                         <span class="px-3 py-1 bg-slate-800 rounded-full text-sm text-slate-300 border border-slate-700">CSS3</span>
                         <span class="px-3 py-1 bg-slate-800 rounded-full text-sm text-slate-300 border border-slate-700">Responsive Design</span>
                         <span class="px-3 py-1 bg-slate-800 rounded-full text-sm text-slate-300 border border-slate-700">DOM Manipulation</span>
+                        <span class="px-3 py-1 bg-slate-800 rounded-full text-sm text-slate-300 border border-slate-700">Local Storage</span>
                     </div>
                 </div>
 
@@ -439,6 +434,7 @@
                         <span class="px-3 py-1 bg-slate-800 rounded-full text-sm text-slate-300 border border-slate-700">Recursion</span>
                         <span class="px-3 py-1 bg-slate-800 rounded-full text-sm text-slate-300 border border-slate-700">Backtracking</span>
                         <span class="px-3 py-1 bg-slate-800 rounded-full text-sm text-slate-300 border border-slate-700">OOP</span>
+                        <span class="px-3 py-1 bg-slate-800 rounded-full text-sm text-slate-300 border border-slate-700">Problem Solving</span>
                     </div>
                 </div>
 
@@ -516,16 +512,26 @@
                             <p class="text-white font-medium">github.com/CODER-G45</p>
                         </div>
                     </a>
+                    <a href="https://leetcode.com/u/SI1GMA/" target="_blank" rel="noopener" class="flex items-center gap-4 p-4 bg-slate-800/50 rounded-xl hover:bg-slate-800 transition-colors group md:col-span-2">
+                        <div class="w-12 h-12 bg-yellow-500/20 rounded-full flex items-center justify-center group-hover:bg-yellow-500/30 transition-colors">
+                            <i data-lucide="code-2" class="w-6 h-6 text-yellow-400"></i>
+                        </div>
+                        <div>
+                            <p class="text-sm text-slate-400">LeetCode</p>
+                            <p class="text-white font-medium">leetcode.com/u/SI1GMA</p>
+                        </div>
+                    </a>
                 </div>
 
                 <div class="flex justify-center gap-6">
-                    <a href="https://github.com/CODER-G45" target="_blank" class="w-12 h-12 rounded-full bg-slate-800 flex items-center justify-center hover:bg-blue-600 transition-colors text-slate-400 hover:text-white">
+                    <a href="https://github.com/CODER-G45" target="_blank" aria-label="GitHub" class="w-12 h-12 rounded-full bg-slate-800 flex items-center justify-center hover:bg-blue-600 transition-colors text-slate-400 hover:text-white">
                         <i data-lucide="github" class="w-5 h-5"></i>
                     </a>
-                    <a href="mailto:govindkumarcai123@gmail.com" class="w-12 h-12 rounded-full bg-slate-800 flex items-center justify-center hover:bg-red-600 transition-colors text-slate-400 hover:text-white">
+                    <a href="mailto:govindkumarcai123@gmail.com" aria-label="Email" class="w-12 h-12 rounded-full bg-slate-800 flex items-center justify-center hover:bg-red-600 transition-colors text-slate-400 hover:text-white">
                         <i data-lucide="mail" class="w-5 h-5"></i>
                     </a>
-                    <a href="#" class="w-12 h-12 rounded-full bg-slate-800 flex items-center justify-center hover:bg-blue-700 transition-colors text-slate-400 hover:text-white" title="LinkedIn (Add your URL)">
+                    <!-- TODO: put your real LinkedIn URL in href below -->
+                    <a href="https://www.linkedin.com/in/YOUR-LINKEDIN-ID/" target="_blank" rel="noopener" aria-label="LinkedIn" class="w-12 h-12 rounded-full bg-slate-800 flex items-center justify-center hover:bg-blue-700 transition-colors text-slate-400 hover:text-white" title="LinkedIn">
                         <i data-lucide="linkedin" class="w-5 h-5"></i>
                     </a>
                 </div>
@@ -586,8 +592,13 @@
         const mobileMenu = document.getElementById('mobile-menu');
         
         mobileMenuBtn.addEventListener('click', () => {
-            mobileMenu.classList.toggle('hidden');
+            const open = mobileMenu.classList.toggle('hidden') === false;
+            mobileMenuBtn.setAttribute('aria-expanded', open);
         });
+        mobileMenu.querySelectorAll('a').forEach(a => a.addEventListener('click', () => {
+            mobileMenu.classList.add('hidden');
+            mobileMenuBtn.setAttribute('aria-expanded', 'false');
+        }));
 
         // Navbar scroll effect
         const navbar = document.getElementById('navbar');
@@ -668,8 +679,9 @@
                 });
             });
             
-            requestAnimationFrame(animateParticles);
+            if (!document.hidden) requestAnimationFrame(animateParticles);
         }
+        document.addEventListener("visibilitychange", () => { if (!document.hidden) animateParticles(); });
         
         window.addEventListener('resize', () => {
             resize();
