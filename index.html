@@ -1,707 +1,418 @@
 <!DOCTYPE html>
-<html lang="en" class="scroll-smooth">
+<html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Govinda Kumar | ECE Student & Developer</title>
-    <meta name="description" content="Govinda Kumar - 3rd year ECE student at Haldia Institute of Technology. C++, DSA and web development projects. Open to internships.">
-    <meta property="og:title" content="Govinda Kumar | ECE Student & Developer">
-    <meta property="og:description" content="C++, DSA and web development projects. Open to internships.">
-    <meta property="og:type" content="website">
-    <meta name="theme-color" content="#0f172a">
-    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>&#128187;</text></svg>">
-    <script src="https://cdn.tailwindcss.com"></script>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
-    <script src="https://unpkg.com/lucide@0.460.0"></script>
-    <style>
-        * { font-family: 'Inter', sans-serif; }
-        h1, h2, h3, h4, h5, h6 { font-family: 'Space Grotesk', sans-serif; }
-        
-        ::-webkit-scrollbar { width: 8px; }
-        ::-webkit-scrollbar-track { background: #0f172a; }
-        ::-webkit-scrollbar-thumb { background: #3b82f6; border-radius: 4px; }
-        
-        @keyframes float {
-            0%, 100% { transform: translateY(0px); }
-            50% { transform: translateY(-20px); }
-        }
-        @keyframes gradient-shift {
-            0% { background-position: 0% 50%; }
-            50% { background-position: 100% 50%; }
-            100% { background-position: 0% 50%; }
-        }
-        @keyframes slide-up {
-            from { opacity: 0; transform: translateY(30px); }
-            to { opacity: 1; transform: translateY(0); }
-        }
-        
-        .animate-float { animation: float 6s ease-in-out infinite; }
-        .animate-slide-up { animation: slide-up 0.8s ease-out forwards; }
-        .gradient-text {
-            background: linear-gradient(135deg, #60a5fa 0%, #a78bfa 50%, #f472b6 100%);
-            background-size: 200% 200%;
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            animation: gradient-shift 5s ease infinite;
-        }
-        .glass-card {
-            background: rgba(30, 41, 59, 0.7);
-            backdrop-filter: blur(12px);
-            border: 1px solid rgba(255, 255, 255, 0.1);
-        }
-        .hover-lift {
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-        }
-        .hover-lift:hover {
-            transform: translateY(-8px);
-            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
-        }
-        .typing-cursor::after {
-            content: '|';
-            animation: blink 1s infinite;
-        }
-        @keyframes blink {
-            0%, 50% { opacity: 1; }
-            51%, 100% { opacity: 0; }
-        }
-        
-        #particles-canvas {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            z-index: -1;
-            pointer-events: none;
-        }
-        
-        @media (prefers-reduced-motion: reduce) {
-            *, *::before, *::after { animation: none !important; transition: none !important; }
-        }
-        a:focus-visible, button:focus-visible { outline: 2px solid #60a5fa; outline-offset: 2px; }
-        .code-block {
-            background: #1e293b;
-            border-radius: 0.5rem;
-            font-family: 'Courier New', monospace;
-            font-size: 0.875rem;
-        }
-    </style>
-<base target="_blank">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Govinda Kumar | Software Developer, ECE Pre-Final Year</title>
+<meta name="description" content="Govinda Kumar, pre-final year B.Tech ECE student at Haldia Institute of Technology. C++, DSA, web development and Python. 600+ LeetCode problems solved. Open to software internships.">
+<meta property="og:title" content="Govinda Kumar | Software Developer">
+<meta property="og:description" content="C++, DSA and web projects. Open to software internships.">
+<meta name="theme-color" content="#070b16">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><rect width=%22100%22 height=%22100%22 rx=%2222%22 fill=%22%23070b16%22/><text x=%2250%22 y=%2272%22 font-size=%2264%22 text-anchor=%22middle%22 fill=%22%2360a5fa%22 font-family=%22monospace%22>G</text></svg>">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Sora:wght@500;600;700;800&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#070b16;--card:rgba(17,26,46,.72);--line:rgba(148,163,184,.16);--text:#e8ecf5;--muted:#93a0b8;--b:#60a5fa;--v:#a78bfa;--p:#f472b6;--ok:#4ade80}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;scroll-padding-top:80px}
+body{background:var(--bg);color:var(--text);font:400 16px/1.65 Inter,system-ui,sans-serif;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+h1,h2,h3{font-family:Sora,Inter,sans-serif;line-height:1.15;letter-spacing:-.02em}
+a{color:inherit;text-decoration:none}
+a:focus-visible,button:focus-visible{outline:2px solid var(--b);outline-offset:3px;border-radius:8px}
+.wrap{max-width:1120px;margin:0 auto;padding:0 24px;position:relative;z-index:1}
+section{padding:96px 0;position:relative}
+#fx{position:fixed;inset:0;width:100%;height:100%;z-index:0;pointer-events:none}
+.glow{position:absolute;border-radius:50%;filter:blur(90px);opacity:.35;pointer-events:none;animation:float 9s ease-in-out infinite}
+@keyframes float{50%{transform:translateY(-28px)}}
+.grad{background:linear-gradient(120deg,var(--b),var(--v) 50%,var(--p));background-size:200% 200%;-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;animation:shift 6s ease infinite}
+@keyframes shift{50%{background-position:100% 50%}}
+h2{font-size:clamp(1.8rem,4vw,2.6rem);font-weight:700;margin-bottom:12px}
+.lede{color:var(--muted);max-width:58ch;margin-bottom:44px}
+
+header{position:fixed;top:0;left:0;right:0;z-index:30;transition:background .3s,border-color .3s;border-bottom:1px solid transparent}
+header.s{background:rgba(7,11,22,.8);backdrop-filter:blur(14px);border-color:var(--line)}
+header .wrap{display:flex;align-items:center;justify-content:space-between;height:68px}
+.brand{font:700 1.15rem Sora,sans-serif}
+nav{display:flex;gap:28px;align-items:center;font-size:.92rem;color:var(--muted)}
+nav a:not(.btn):hover{color:var(--text)}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;padding:13px 24px;border-radius:999px;font-weight:600;font-size:.95rem;border:1px solid var(--line);background:rgba(255,255,255,.02);transition:transform .25s,border-color .25s,box-shadow .25s}
+.btn:hover{transform:translateY(-2px);border-color:var(--b)}
+.btn.p{background:linear-gradient(120deg,#3b82f6,#7c5cf6);border-color:transparent;color:#fff}
+.btn.p:hover{box-shadow:0 10px 30px rgba(99,102,241,.45)}
+nav .btn{padding:8px 18px;font-size:.88rem}
+
+.hero{min-height:100vh;display:flex;align-items:center;padding:120px 0 72px;overflow:hidden}
+.hero .wrap{display:grid;grid-template-columns:1.1fr .9fr;gap:56px;align-items:center}
+.status{display:inline-flex;align-items:center;gap:10px;font-size:.86rem;color:#9fb4d8;border:1px solid rgba(96,165,250,.3);background:rgba(96,165,250,.08);padding:7px 16px;border-radius:999px;margin-bottom:26px}
+.dot{width:8px;height:8px;border-radius:50%;background:var(--ok);animation:pulse 2.4s infinite}
+@keyframes pulse{0%{box-shadow:0 0 0 0 rgba(74,222,128,.6)}70%,100%{box-shadow:0 0 0 10px rgba(74,222,128,0)}}
+h1{font-size:clamp(2.8rem,7vw,5rem);font-weight:800;margin-bottom:18px}
+.type{font:500 clamp(1.1rem,2.4vw,1.45rem) 'JetBrains Mono',monospace;color:var(--b);min-height:2em;margin-bottom:18px}
+.type::after{content:"|";margin-left:2px;animation:blink 1s steps(1) infinite}
+@keyframes blink{50%{opacity:0}}
+.sub{color:var(--muted);max-width:50ch;margin-bottom:34px}
+.actions{display:flex;flex-wrap:wrap;gap:12px}
+.win{background:#0c1426;border:1px solid var(--line);border-radius:16px;overflow:hidden;box-shadow:0 30px 80px rgba(59,130,246,.18);font:400 .8rem/1.75 'JetBrains Mono',monospace;animation:float 8s ease-in-out infinite}
+.bar{display:flex;align-items:center;gap:7px;padding:12px 16px;border-bottom:1px solid var(--line);color:var(--muted);font-size:.74rem}
+.bar i{width:10px;height:10px;border-radius:50%;background:#f87171}.bar i:nth-child(2){background:#fbbf24}.bar i:nth-child(3){background:#4ade80}.bar span{margin-left:10px}
+.win pre{padding:18px 20px;overflow-x:auto;color:#c6d0e6}
+.k{color:#c4a7ff}.f{color:var(--b)}.c{color:#5d6b88}.n{color:#f3b27a}
+
+.card{position:relative;background:var(--card);backdrop-filter:blur(12px);border:1px solid var(--line);border-radius:20px;overflow:hidden;transition:transform .3s,border-color .3s}
+.card::before{content:"";position:absolute;inset:0;background:radial-gradient(420px circle at var(--mx,50%) var(--my,0%),rgba(124,92,246,.18),transparent 60%);opacity:0;transition:opacity .3s;pointer-events:none}
+.card:hover{transform:translateY(-6px);border-color:rgba(124,92,246,.5)}
+.card:hover::before{opacity:1}
+.grid3{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
+.art{height:170px;display:flex;align-items:center;justify-content:center;border-bottom:1px solid var(--line);background:linear-gradient(135deg,rgba(59,130,246,.1),rgba(167,139,250,.08))}
+.body{padding:26px;display:flex;flex-direction:column;gap:14px;height:calc(100% - 170px)}
+.body h3{font-size:1.25rem}
+.tags{display:flex;gap:8px;flex-wrap:wrap}
+.tag{font:500 .72rem 'JetBrains Mono',monospace;color:var(--b);background:rgba(96,165,250,.1);padding:4px 10px;border-radius:6px}
+.body p{color:var(--muted);font-size:.94rem;flex:1}
+.body ul{list-style:none;display:grid;gap:6px;font-size:.88rem;color:#c3cde0}
+.body li::before{content:"";display:inline-block;width:6px;height:6px;border-radius:50%;background:linear-gradient(120deg,var(--b),var(--p));margin-right:10px}
+.links{display:flex;gap:10px;margin-top:6px}
+.links .btn{flex:1;padding:10px 14px;font-size:.86rem}
+
+.sg{display:grid;grid-template-columns:repeat(9,1fr);width:136px;height:136px;border:2px solid rgba(96,165,250,.5);border-radius:6px;overflow:hidden}
+.sg b{border:.5px solid rgba(148,163,184,.18);font:600 .62rem/15px 'JetBrains Mono',monospace;text-align:center;color:#c6d0e6}
+.sg b.s{color:var(--p);animation:pop .5s ease both}
+@keyframes pop{from{transform:scale(.2);opacity:0}}
+.term{width:78%;background:#0a1020;border:1px solid var(--line);border-radius:10px;padding:12px 14px;font:.74rem/1.6 'JetBrains Mono',monospace;color:var(--muted)}
+.term em{color:var(--ok);font-style:normal}
+.todo{width:78%;display:grid;gap:8px}
+.todo div{display:flex;align-items:center;gap:10px;background:#0a1020;border:1px solid var(--line);border-radius:10px;padding:9px 12px;font-size:.8rem;cursor:pointer;transition:.25s}
+.todo div::before{content:"";width:14px;height:14px;border-radius:4px;border:1.5px solid var(--v);flex:none;transition:.25s}
+.todo div.d{color:var(--muted);text-decoration:line-through}
+.todo div.d::before{background:var(--v);box-shadow:inset 0 0 0 2px #0a1020}
+
+.skills{display:grid;grid-template-columns:repeat(2,1fr);gap:24px}
+.skills .card{padding:28px}
+.skills h3{font-size:1.05rem;margin-bottom:16px}
+.chips{display:flex;flex-wrap:wrap;gap:10px}
+.chip{padding:7px 15px;border-radius:999px;font-size:.88rem;color:#d3dbec;border:1px solid var(--line);background:rgba(255,255,255,.03);transition:.25s}
+.chip:hover{border-color:var(--v);color:#fff;transform:translateY(-2px)}
+.stats{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;margin-bottom:24px}
+.stat{padding:28px}
+.stat b{display:block;font:800 2.6rem Sora,sans-serif}
+.stat span{color:var(--muted);font-size:.9rem}
+.edu{padding:30px;display:flex;gap:20px;align-items:center;flex-wrap:wrap;justify-content:space-between}
+.edu p{color:var(--muted);font-size:.94rem}
+
+.bars{display:flex;align-items:flex-end;gap:4px;height:110px}
+.bars i{width:9px;background:linear-gradient(var(--b),var(--v));border-radius:3px 3px 0 0;transition:height .3s,background .3s}
+.bars i.h{background:var(--p)}
+.tbl{display:grid;grid-template-columns:repeat(4,1fr);gap:4px;width:78%;font:.68rem/1 'JetBrains Mono',monospace}
+.tbl b{background:#0a1020;border:1px solid var(--line);border-radius:5px;padding:8px 4px;text-align:center;font-weight:500;color:#c6d0e6}
+.tbl b.t{color:var(--b);background:rgba(96,165,250,.1)}
+.minis{display:grid;grid-template-columns:repeat(2,1fr);gap:24px;margin-top:24px}
+.mini{padding:26px;display:flex;flex-direction:column;gap:12px}
+.mini h3{font-size:1.1rem}
+.mini p{color:var(--muted);font-size:.92rem;flex:1}
+.mini{padding:0}
+.mini .art{height:140px}
+.mini .body{height:auto;flex:1}
+.chat{width:78%;display:grid;gap:8px;font-size:.78rem}
+.chat span{padding:8px 12px;border-radius:12px;max-width:85%;opacity:0;animation:cin 7s infinite}
+.chat .u{justify-self:end;background:linear-gradient(120deg,#3b82f6,#7c5cf6);color:#fff;border-bottom-right-radius:4px}
+.chat .r{background:#0a1020;border:1px solid var(--line);color:#c6d0e6;border-bottom-left-radius:4px}
+.chat span:nth-child(2){animation-delay:1.2s}.chat span:nth-child(3){animation-delay:2.4s}
+@keyframes cin{0%{opacity:0;transform:translateY(8px)}6%,82%{opacity:1;transform:none}92%,100%{opacity:0}}
+.wave{width:84%;height:96px}
+.wave .w{fill:none;stroke:url(#wg);stroke-width:2.5;stroke-linecap:round;stroke-dasharray:14 8;animation:dash 1.6s linear infinite}
+.wave .w2{stroke:#f472b6;stroke-width:1.5;opacity:.55;animation-duration:2.6s}
+@keyframes dash{to{stroke-dashoffset:-44}}
+.wave .led{fill:var(--ok);animation:pulse 2s infinite;border-radius:50%}
+.cur{display:inline-block;width:7px;height:.9em;background:var(--b);vertical-align:middle;animation:blink 1s steps(1) infinite}
+.term.sm{width:78%}
+.todo.sm{width:78%}
+.sub2{font:600 1.05rem Sora,sans-serif;margin:44px 0 0;color:#c3cde0}
+.profiles{display:flex;gap:12px;flex-wrap:wrap;margin-top:24px}
+.cta{padding:56px;text-align:center}
+.cta h2{margin-bottom:10px}.cta p{color:var(--muted);margin-bottom:30px}
+.cta .actions{justify-content:center}
+footer{border-top:1px solid var(--line);padding:28px 0;color:var(--muted);font-size:.88rem;position:relative;z-index:1}
+footer .wrap{display:flex;justify-content:space-between;flex-wrap:wrap;gap:12px}
+.rv{opacity:0;transform:translateY(26px);transition:opacity .7s,transform .7s}.rv.in{opacity:1;transform:none}
+
+@media(max-width:900px){
+  .hero .wrap,.grid3,.skills,.stats,.minis{grid-template-columns:1fr}
+  nav a:not(.btn){display:none}
+  section{padding:68px 0}
+}
+@media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}.rv{opacity:1;transform:none}}
+</style>
 </head>
-<body class="bg-slate-900 text-slate-100 overflow-x-hidden">
+<body>
+<canvas id="fx" aria-hidden="true"></canvas>
 
-    <canvas id="particles-canvas"></canvas>
-
-    <!-- Navigation -->
-    <nav class="fixed w-full z-50 top-0 transition-all duration-300" id="navbar">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="flex justify-between items-center h-20">
-                <div class="flex-shrink-0 flex items-center">
-                    <span class="text-2xl font-bold gradient-text">&lt;Govinda/&gt;</span>
-                </div>
-                <div class="hidden md:block">
-                    <div class="ml-10 flex items-baseline space-x-8">
-                        <a href="#home" class="hover:text-blue-400 transition-colors px-3 py-2 rounded-md text-sm font-medium">Home</a>
-                        <a href="#about" class="hover:text-blue-400 transition-colors px-3 py-2 rounded-md text-sm font-medium">About</a>
-                        <a href="#projects" class="hover:text-blue-400 transition-colors px-3 py-2 rounded-md text-sm font-medium">Projects</a>
-                        <a href="#skills" class="hover:text-blue-400 transition-colors px-3 py-2 rounded-md text-sm font-medium">Skills</a>
-                        <a href="#contact" class="bg-blue-600 hover:bg-blue-700 text-white px-6 py-2 rounded-full text-sm font-medium transition-all hover:scale-105">Contact</a>
-                    </div>
-                </div>
-                <div class="md:hidden">
-                    <button id="mobile-menu-btn" aria-label="Toggle menu" aria-expanded="false" class="text-gray-300 hover:text-white focus:outline-none">
-                        <i data-lucide="menu" class="w-6 h-6"></i>
-                    </button>
-                </div>
-            </div>
-        </div>
-        <div id="mobile-menu" class="hidden md:hidden glass-card absolute w-full">
-            <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3">
-                <a href="#home" class="block px-3 py-2 rounded-md text-base font-medium hover:text-blue-400">Home</a>
-                <a href="#about" class="block px-3 py-2 rounded-md text-base font-medium hover:text-blue-400">About</a>
-                <a href="#projects" class="block px-3 py-2 rounded-md text-base font-medium hover:text-blue-400">Projects</a>
-                <a href="#skills" class="block px-3 py-2 rounded-md text-base font-medium hover:text-blue-400">Skills</a>
-                <a href="#contact" class="block px-3 py-2 rounded-md text-base font-medium text-blue-400">Contact</a>
-            </div>
-        </div>
+<header id="hd">
+  <div class="wrap">
+    <a href="#top" class="brand grad">&lt;Govinda /&gt;</a>
+    <nav aria-label="Primary">
+      <a href="#projects">Projects</a><a href="#skills">Skills</a><a href="#about">About</a>
+      <a class="btn p" href="#contact">Contact</a>
     </nav>
+  </div>
+</header>
 
-    <!-- Hero Section -->
-    <section id="home" class="min-h-screen flex items-center justify-center relative overflow-hidden pt-20">
-        <div class="absolute inset-0 bg-gradient-to-br from-blue-900/20 via-purple-900/20 to-slate-900/20"></div>
-        
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 text-center">
-            <div class="animate-slide-up">
-                <div class="inline-block px-4 py-2 rounded-full bg-blue-500/10 border border-blue-500/20 text-blue-400 text-sm font-medium mb-6">
-                    3rd Year ECE Student | Seeking Internship Opportunities
-                </div>
-                <h1 class="text-5xl md:text-7xl font-bold mb-6 leading-tight">
-                    Hi, I'm <span class="gradient-text typing-cursor" id="typing-text">Govinda Kumar</span>
-                </h1>
-                <p class="text-xl md:text-2xl text-slate-400 mb-8 max-w-2xl mx-auto">
-                    ECE Student | C++ | DSA | Web Developer<br>
-                    <span class="text-lg text-slate-500 mt-2 block">I solve problems with C++ and build clean, responsive web apps. Currently looking for a software development internship.</span>
-                </p>
-                <div class="flex flex-col sm:flex-row gap-4 justify-center items-center">
-                    <a href="#projects" class="bg-blue-600 hover:bg-blue-700 text-white px-8 py-4 rounded-full font-medium transition-all hover:scale-105 hover:shadow-lg hover:shadow-blue-500/25 flex items-center justify-center gap-2">
-                        View Projects
-                        <i data-lucide="arrow-down" class="w-4 h-4"></i>
-                    </a>
-                    <a href="resume.pdf" download="Govinda_Kumar_Resume.pdf" class="border border-slate-600 hover:border-blue-400 text-slate-300 hover:text-white px-8 py-4 rounded-full font-medium transition-all hover:scale-105 flex items-center justify-center gap-2">
-                        <i data-lucide="download" class="w-5 h-5"></i>
-                        Download Resume
-                    </a>
-                </div>
-            </div>
-            
-            <div class="absolute top-20 left-10 w-20 h-20 bg-blue-500/20 rounded-full blur-xl animate-float"></div>
-            <div class="absolute bottom-20 right-10 w-32 h-32 bg-purple-500/20 rounded-full blur-xl animate-float" style="animation-delay: 2s;"></div>
-        </div>
-    </section>
-
-    <!-- About Section -->
-    <section id="about" class="py-20 relative">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="grid md:grid-cols-2 gap-12 items-center">
-                <div class="relative group order-2 md:order-1">
-                    <div class="absolute -inset-1 bg-gradient-to-r from-blue-600 to-purple-600 rounded-2xl blur opacity-25 group-hover:opacity-75 transition duration-1000"></div>
-                    <div class="relative glass-card rounded-2xl p-8 h-full">
-                        <div class="space-y-6">
-                            <div class="flex items-center gap-4">
-                                <div class="w-12 h-12 rounded-full bg-blue-500/20 flex items-center justify-center">
-                                    <i data-lucide="graduation-cap" class="w-6 h-6 text-blue-400"></i>
-                                </div>
-                                <div>
-                                    <h3 class="font-bold">Education</h3>
-                                    <p class="text-sm text-slate-400">B.Tech ECE, Haldia Institute of Technology (3rd Year)</p>
-                                </div>
-                            </div>
-                            <div class="flex items-center gap-4">
-                                <div class="w-12 h-12 rounded-full bg-purple-500/20 flex items-center justify-center">
-                                    <i data-lucide="code-2" class="w-6 h-6 text-purple-400"></i>
-                                </div>
-                                <div>
-                                    <h3 class="font-bold">Focus Areas</h3>
-                                    <p class="text-sm text-slate-400">DSA, Web Development, Problem Solving</p>
-                                </div>
-                            </div>
-                            <div class="flex items-center gap-4">
-                                <div class="w-12 h-12 rounded-full bg-pink-500/20 flex items-center justify-center">
-                                    <i data-lucide="target" class="w-6 h-6 text-pink-400"></i>
-                                </div>
-                                <div>
-                                    <h3 class="font-bold">Goal</h3>
-                                    <p class="text-sm text-slate-400">Seeking Internship Opportunities</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                
-                <div class="order-1 md:order-2">
-                    <h2 class="text-3xl md:text-4xl font-bold mb-6">About Me</h2>
-                    <p class="text-slate-400 text-lg mb-6 leading-relaxed">
-                        I'm Govinda Kumar, a 3rd year Electronics and Communication Engineering (ECE) student passionate about software development and problem solving.
-                    </p>
-                    <p class="text-slate-400 text-lg mb-6 leading-relaxed">
-                        Strengthening my Data Structures & Algorithms and web development skills through hands-on projects. I enjoy building projects that solve real-world problems using C++ and modern web technologies.
-                    </p>
-                    <p class="text-slate-400 text-lg mb-8 leading-relaxed">
-                        I'm actively looking for internship opportunities to apply my skills and gain industry experience in software development.
-                    </p>
-                    
-                    <div class="grid grid-cols-2 gap-6">
-                        <div class="glass-card p-4 rounded-xl border-l-4 border-blue-500">
-                            <h3 class="text-2xl font-bold text-white mb-1">8.6</h3>
-                            <p class="text-slate-400 text-sm">CGPA, B.Tech ECE</p>
-                        </div>
-                        <div class="glass-card p-4 rounded-xl border-l-4 border-purple-500">
-                            <h3 class="text-2xl font-bold text-white mb-1">3+</h3>
-                            <p class="text-slate-400 text-sm">Projects on GitHub</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Projects Section -->
-    <section id="projects" class="py-20 relative">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="text-center mb-16">
-                <h2 class="text-3xl md:text-4xl font-bold mb-4">Featured Projects</h2>
-                <p class="text-slate-400 max-w-2xl mx-auto">Building projects to strengthen my development skills</p>
-            </div>
-
-            <div class="grid lg:grid-cols-3 gap-8">
-                
-                <!-- Project 1: To-Do List -->
-                <div class="group relative">
-                    <div class="absolute -inset-0.5 bg-gradient-to-r from-purple-600 to-pink-600 rounded-2xl blur opacity-30 group-hover:opacity-100 transition duration-1000"></div>
-                    <div class="relative glass-card rounded-2xl overflow-hidden hover-lift h-full flex flex-col">
-                        <div class="h-48 bg-gradient-to-br from-slate-800 to-slate-900 flex items-center justify-center relative overflow-hidden">
-                            <i data-lucide="check-square" class="w-16 h-16 text-purple-400 relative z-10"></i>
-                            <div class="absolute inset-0 bg-purple-500/10"></div>
-                        </div>
-                        <div class="p-6 flex-1 flex flex-col">
-                            <div class="flex justify-between items-start mb-3 flex-wrap gap-2">
-                                <h3 class="text-xl font-bold group-hover:text-purple-400 transition-colors">To-Do List Web App</h3>
-                                <div class="flex gap-1">
-                                    <span class="px-2 py-1 bg-purple-500/20 text-purple-400 rounded text-xs">HTML</span>
-                                    <span class="px-2 py-1 bg-pink-500/20 text-pink-400 rounded text-xs">CSS</span>
-                                    <span class="px-2 py-1 bg-yellow-500/20 text-yellow-400 rounded text-xs">JS</span>
-                                </div>
-                            </div>
-                            <p class="text-slate-400 text-sm mb-4 flex-1">
-                                A fully functional task management application with Local Storage persistence. Features add, delete, mark complete, and clear all functionality.
-                            </p>
-                            
-                            <div class="space-y-2 mb-4">
-                                <div class="flex items-center gap-2 text-xs text-slate-300">
-                                    <i data-lucide="check-circle" class="w-3 h-3 text-purple-400"></i>
-                                    <span>Local Storage Integration</span>
-                                </div>
-                                <div class="flex items-center gap-2 text-xs text-slate-300">
-                                    <i data-lucide="check-circle" class="w-3 h-3 text-purple-400"></i>
-                                    <span>Responsive Design</span>
-                                </div>
-                                <div class="flex items-center gap-2 text-xs text-slate-300">
-                                    <i data-lucide="check-circle" class="w-3 h-3 text-purple-400"></i>
-                                    <span>CRUD Operations</span>
-                                </div>
-                            </div>
-
-                            <div class="flex gap-2 mt-auto">
-                                <a href="https://coder-g45.github.io/todo-list-project/" target="_blank" rel="noopener" class="flex-1 bg-purple-600 hover:bg-purple-700 text-white py-2 rounded-lg text-center text-sm font-medium transition-colors flex items-center justify-center gap-2">
-                                    Live Demo
-                                    <i data-lucide="external-link" class="w-3 h-3"></i>
-                                </a>
-                                <a href="https://github.com/CODER-G45/todo-list-project" target="_blank" class="px-3 py-2 border border-slate-600 hover:border-purple-400 text-slate-300 hover:text-white rounded-lg transition-colors">
-                                    <i data-lucide="github" class="w-4 h-4"></i>
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Project 2: Student Management System -->
-                <div class="group relative">
-                    <div class="absolute -inset-0.5 bg-gradient-to-r from-blue-600 to-indigo-600 rounded-2xl blur opacity-30 group-hover:opacity-100 transition duration-1000"></div>
-                    <div class="relative glass-card rounded-2xl overflow-hidden hover-lift h-full flex flex-col">
-                        <div class="h-48 bg-gradient-to-br from-slate-800 to-slate-900 flex items-center justify-center relative overflow-hidden">
-                            <i data-lucide="users" class="w-16 h-16 text-blue-400 relative z-10"></i>
-                            <div class="absolute inset-0 bg-blue-500/10"></div>
-                        </div>
-                        <div class="p-6 flex-1 flex flex-col">
-                            <div class="flex justify-between items-start mb-3">
-                                <h3 class="text-xl font-bold group-hover:text-blue-400 transition-colors">Student Management System</h3>
-                                <span class="px-3 py-1 bg-blue-500/20 text-blue-400 rounded-full text-xs font-medium">C++</span>
-                            </div>
-                            <p class="text-slate-400 text-sm mb-4 flex-1">
-                                Console-based application using C++ OOP concepts. Manages student records with features to add, search, delete, and display students with grade calculation.
-                            </p>
-                            
-                            <div class="space-y-2 mb-4">
-                                <div class="flex items-center gap-2 text-xs text-slate-300">
-                                    <i data-lucide="check-circle" class="w-3 h-3 text-blue-400"></i>
-                                    <span>Classes & Objects (OOP)</span>
-                                </div>
-                                <div class="flex items-center gap-2 text-xs text-slate-300">
-                                    <i data-lucide="check-circle" class="w-3 h-3 text-blue-400"></i>
-                                    <span>Array of Structures</span>
-                                </div>
-                                <div class="flex items-center gap-2 text-xs text-slate-300">
-                                    <i data-lucide="check-circle" class="w-3 h-3 text-blue-400"></i>
-                                    <span>Search, Delete &amp; Grade Calculation</span>
-                                </div>
-                            </div>
-
-                            <div class="bg-slate-800 rounded p-2 mb-4 font-mono text-xs text-slate-400">
-                                <div class="text-green-400">$ ./student_mgmt</div>
-                                <div>1. Add Student</div>
-                                <div>2. Display All</div>
-                                <div>3. Search | 4. Delete</div>
-                            </div>
-
-                            <div class="flex gap-2 mt-auto">
-                                <a href="https://github.com/CODER-G45/student-management-system" target="_blank" class="flex-1 bg-blue-600 hover:bg-blue-700 text-white py-2 rounded-lg text-center text-sm font-medium transition-colors flex items-center justify-center gap-2">
-                                    View Code
-                                    <i data-lucide="github" class="w-4 h-4"></i>
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Project 3: Sudoku Solver -->
-                <div class="group relative">
-                    <div class="absolute -inset-0.5 bg-gradient-to-r from-cyan-500 to-blue-600 rounded-2xl blur opacity-30 group-hover:opacity-100 transition duration-1000"></div>
-                    <div class="relative glass-card rounded-2xl overflow-hidden hover-lift h-full flex flex-col">
-                        <div class="h-48 bg-gradient-to-br from-slate-800 to-slate-900 flex items-center justify-center relative overflow-hidden">
-                            <div class="absolute inset-0 opacity-20">
-                                <div class="grid grid-cols-3 gap-1 w-24 h-24 mx-auto">
-                                    <div class="bg-cyan-500/30 rounded"></div><div class="bg-cyan-500/50 rounded"></div><div class="bg-cyan-500/30 rounded"></div>
-                                    <div class="bg-cyan-500/50 rounded"></div><div class="bg-cyan-500/30 rounded"></div><div class="bg-cyan-500/50 rounded"></div>
-                                    <div class="bg-cyan-500/30 rounded"></div><div class="bg-cyan-500/50 rounded"></div><div class="bg-cyan-500/30 rounded"></div>
-                                </div>
-                            </div>
-                            <i data-lucide="grid-3x3" class="w-16 h-16 text-cyan-400 relative z-10"></i>
-                        </div>
-                        <div class="p-6 flex-1 flex flex-col">
-                            <div class="flex justify-between items-start mb-3">
-                                <h3 class="text-xl font-bold group-hover:text-cyan-400 transition-colors">Sudoku Solver</h3>
-                                <span class="px-3 py-1 bg-cyan-500/20 text-cyan-400 rounded-full text-xs font-medium">C++</span>
-                            </div>
-                            <p class="text-slate-400 text-sm mb-4 flex-1">
-                                Algorithmic implementation using backtracking algorithm to solve 9x9 Sudoku puzzles efficiently. Demonstrates understanding of recursion and constraint satisfaction.
-                            </p>
-                            
-                            <div class="space-y-2 mb-4">
-                                <div class="flex items-center gap-2 text-xs text-slate-300">
-                                    <i data-lucide="check-circle" class="w-3 h-3 text-cyan-400"></i>
-                                    <span>Backtracking Algorithm</span>
-                                </div>
-                                <div class="flex items-center gap-2 text-xs text-slate-300">
-                                    <i data-lucide="check-circle" class="w-3 h-3 text-cyan-400"></i>
-                                    <span>Recursion</span>
-                                </div>
-                                <div class="flex items-center gap-2 text-xs text-slate-300">
-                                    <i data-lucide="check-circle" class="w-3 h-3 text-cyan-400"></i>
-                                    <span>2D Array Manipulation</span>
-                                </div>
-                            </div>
-
-                            <div class="flex gap-2 mt-auto">
-                                <a href="https://coder-g45.github.io/suduko-solver-web/" target="_blank" rel="noopener" class="flex-1 bg-cyan-600 hover:bg-cyan-700 text-white py-2 rounded-lg text-center text-sm font-medium transition-colors flex items-center justify-center gap-2">
-                                    Live Demo
-                                    <i data-lucide="external-link" class="w-3 h-3"></i>
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-            </div>
-        </div>
-    </section>
-
-    <!-- Skills Section -->
-    <section id="skills" class="py-20 relative bg-slate-800/30">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="text-center mb-16">
-                <h2 class="text-3xl md:text-4xl font-bold mb-4">Technical Skills</h2>
-                <p class="text-slate-400">Technologies I work with</p>
-            </div>
-
-            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-                <!-- Programming Languages -->
-                <div class="glass-card rounded-2xl p-6 hover-lift">
-                    <div class="w-12 h-12 bg-blue-500/20 rounded-xl flex items-center justify-center mb-4">
-                        <i data-lucide="code-2" class="w-6 h-6 text-blue-400"></i>
-                    </div>
-                    <h3 class="text-lg font-bold mb-4">Languages</h3>
-                    <div class="flex flex-wrap gap-2">
-                        <span class="px-3 py-1 bg-slate-800 rounded-full text-sm text-slate-300 border border-slate-700">C++</span>
-                        <span class="px-3 py-1 bg-slate-800 rounded-full text-sm text-slate-300 border border-slate-700">JavaScript</span>
-                    </div>
-                </div>
-
-                <!-- Web Development -->
-                <div class="glass-card rounded-2xl p-6 hover-lift">
-                    <div class="w-12 h-12 bg-purple-500/20 rounded-xl flex items-center justify-center mb-4">
-                        <i data-lucide="globe" class="w-6 h-6 text-purple-400"></i>
-                    </div>
-                    <h3 class="text-lg font-bold mb-4">Web Development</h3>
-                    <div class="flex flex-wrap gap-2">
-                        <span class="px-3 py-1 bg-slate-800 rounded-full text-sm text-slate-300 border border-slate-700">HTML5</span>
-                        <span class="px-3 py-1 bg-slate-800 rounded-full text-sm text-slate-300 border border-slate-700">CSS3</span>
-                        <span class="px-3 py-1 bg-slate-800 rounded-full text-sm text-slate-300 border border-slate-700">Responsive Design</span>
-                        <span class="px-3 py-1 bg-slate-800 rounded-full text-sm text-slate-300 border border-slate-700">DOM Manipulation</span>
-                        <span class="px-3 py-1 bg-slate-800 rounded-full text-sm text-slate-300 border border-slate-700">Local Storage</span>
-                    </div>
-                </div>
-
-                <!-- DSA -->
-                <div class="glass-card rounded-2xl p-6 hover-lift">
-                    <div class="w-12 h-12 bg-cyan-500/20 rounded-xl flex items-center justify-center mb-4">
-                        <i data-lucide="git-branch" class="w-6 h-6 text-cyan-400"></i>
-                    </div>
-                    <h3 class="text-lg font-bold mb-4">DSA & CS Fundamentals</h3>
-                    <div class="flex flex-wrap gap-2">
-                        <span class="px-3 py-1 bg-slate-800 rounded-full text-sm text-slate-300 border border-slate-700">Arrays</span>
-                        <span class="px-3 py-1 bg-slate-800 rounded-full text-sm text-slate-300 border border-slate-700">Recursion</span>
-                        <span class="px-3 py-1 bg-slate-800 rounded-full text-sm text-slate-300 border border-slate-700">Backtracking</span>
-                        <span class="px-3 py-1 bg-slate-800 rounded-full text-sm text-slate-300 border border-slate-700">OOP</span>
-                        <span class="px-3 py-1 bg-slate-800 rounded-full text-sm text-slate-300 border border-slate-700">Problem Solving</span>
-                    </div>
-                </div>
-
-                <!-- Tools -->
-                <div class="glass-card rounded-2xl p-6 hover-lift">
-                    <div class="w-12 h-12 bg-pink-500/20 rounded-xl flex items-center justify-center mb-4">
-                        <i data-lucide="wrench" class="w-6 h-6 text-pink-400"></i>
-                    </div>
-                    <h3 class="text-lg font-bold mb-4">Tools & Platforms</h3>
-                    <ul class="space-y-3 text-slate-300 text-sm">
-                        <li class="flex items-center gap-2">
-                            <i data-lucide="check" class="w-4 h-4 text-pink-400"></i>
-                            Git & GitHub
-                        </li>
-                        <li class="flex items-center gap-2">
-                            <i data-lucide="check" class="w-4 h-4 text-pink-400"></i>
-                            VS Code
-                        </li>
-                        <li class="flex items-center gap-2">
-                            <i data-lucide="check" class="w-4 h-4 text-pink-400"></i>
-                            Command Line
-                        </li>
-                    </ul>
-                </div>
-
-                <!-- Soft Skills -->
-                <div class="glass-card rounded-2xl p-6 hover-lift lg:col-span-2">
-                    <div class="w-12 h-12 bg-green-500/20 rounded-xl flex items-center justify-center mb-4">
-                        <i data-lucide="users" class="w-6 h-6 text-green-400"></i>
-                    </div>
-                    <h3 class="text-lg font-bold mb-4">Professional Skills</h3>
-                    <div class="grid md:grid-cols-3 gap-4">
-                        <div class="text-center p-3 bg-slate-800/50 rounded-lg">
-                            <i data-lucide="lightbulb" class="w-6 h-6 text-green-400 mx-auto mb-2"></i>
-                            <p class="text-sm text-slate-300">Problem Solving</p>
-                        </div>
-                        <div class="text-center p-3 bg-slate-800/50 rounded-lg">
-                            <i data-lucide="book-open" class="w-6 h-6 text-green-400 mx-auto mb-2"></i>
-                            <p class="text-sm text-slate-300">Quick Learner</p>
-                        </div>
-                        <div class="text-center p-3 bg-slate-800/50 rounded-lg">
-                            <i data-lucide="message-circle" class="w-6 h-6 text-green-400 mx-auto mb-2"></i>
-                            <p class="text-sm text-slate-300">Communication</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Contact Section -->
-    <section id="contact" class="py-20 relative">
-        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="glass-card rounded-2xl p-8 md:p-12 text-center">
-                <h2 class="text-3xl md:text-4xl font-bold mb-4">Let's Connect</h2>
-                <p class="text-slate-400 mb-8">Interested in discussing projects, opportunities, or collaborations? Reach out!</p>
-                
-                <div class="grid md:grid-cols-2 gap-6 mb-8 text-left">
-                    <a href="mailto:govindkumarcai123@gmail.com" class="flex items-center gap-4 p-4 bg-slate-800/50 rounded-xl hover:bg-slate-800 transition-colors group">
-                        <div class="w-12 h-12 bg-red-500/20 rounded-full flex items-center justify-center group-hover:bg-red-500/30 transition-colors">
-                            <i data-lucide="mail" class="w-6 h-6 text-red-400"></i>
-                        </div>
-                        <div>
-                            <p class="text-sm text-slate-400">Email</p>
-                            <p class="text-white font-medium">govindkumarcai123@gmail.com</p>
-                        </div>
-                    </a>
-                    
-                    <a href="https://github.com/CODER-G45" target="_blank" class="flex items-center gap-4 p-4 bg-slate-800/50 rounded-xl hover:bg-slate-800 transition-colors group">
-                        <div class="w-12 h-12 bg-gray-500/20 rounded-full flex items-center justify-center group-hover:bg-gray-500/30 transition-colors">
-                            <i data-lucide="github" class="w-6 h-6 text-gray-300"></i>
-                        </div>
-                        <div>
-                            <p class="text-sm text-slate-400">GitHub</p>
-                            <p class="text-white font-medium">github.com/CODER-G45</p>
-                        </div>
-                    </a>
-                    <a href="https://leetcode.com/u/SI1GMA/" target="_blank" rel="noopener" class="flex items-center gap-4 p-4 bg-slate-800/50 rounded-xl hover:bg-slate-800 transition-colors group md:col-span-2">
-                        <div class="w-12 h-12 bg-yellow-500/20 rounded-full flex items-center justify-center group-hover:bg-yellow-500/30 transition-colors">
-                            <i data-lucide="code-2" class="w-6 h-6 text-yellow-400"></i>
-                        </div>
-                        <div>
-                            <p class="text-sm text-slate-400">LeetCode</p>
-                            <p class="text-white font-medium">leetcode.com/u/SI1GMA</p>
-                        </div>
-                    </a>
-                </div>
-
-                <div class="flex justify-center gap-6">
-                    <a href="https://github.com/CODER-G45" target="_blank" aria-label="GitHub" class="w-12 h-12 rounded-full bg-slate-800 flex items-center justify-center hover:bg-blue-600 transition-colors text-slate-400 hover:text-white">
-                        <i data-lucide="github" class="w-5 h-5"></i>
-                    </a>
-                    <a href="mailto:govindkumarcai123@gmail.com" aria-label="Email" class="w-12 h-12 rounded-full bg-slate-800 flex items-center justify-center hover:bg-red-600 transition-colors text-slate-400 hover:text-white">
-                        <i data-lucide="mail" class="w-5 h-5"></i>
-                    </a>
-                    <!-- TODO: put your real LinkedIn URL in href below -->
-                    <a href="https://www.linkedin.com/in/YOUR-LINKEDIN-ID/" target="_blank" rel="noopener" aria-label="LinkedIn" class="w-12 h-12 rounded-full bg-slate-800 flex items-center justify-center hover:bg-blue-700 transition-colors text-slate-400 hover:text-white" title="LinkedIn">
-                        <i data-lucide="linkedin" class="w-5 h-5"></i>
-                    </a>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Footer -->
-    <footer class="py-8 border-t border-slate-800">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col md:flex-row justify-between items-center gap-4">
-            <p class="text-slate-500 text-sm">© 2026 Govinda Kumar | Portfolio</p>
-            <div class="flex items-center gap-6 text-slate-400 text-sm">
-                <a href="https://github.com/CODER-G45" target="_blank" class="hover:text-white transition-colors">GitHub</a>
-                <a href="#home" class="hover:text-white transition-colors">Back to Top</a>
-            </div>
-        </div>
-    </footer>
-
-    <script>
-        // Initialize Lucide Icons
-        lucide.createIcons();
-
-        // Typing Effect
-        const words = ['Govinda Kumar', 'ECE Student', 'Problem Solver', 'Developer', 'Coder'];
-        let wordIndex = 0;
-        let charIndex = 0;
-        let isDeleting = false;
-        const typingElement = document.getElementById('typing-text');
-
-        function typeEffect() {
-            const currentWord = words[wordIndex];
-            
-            if (isDeleting) {
-                typingElement.textContent = currentWord.substring(0, charIndex - 1);
-                charIndex--;
-            } else {
-                typingElement.textContent = currentWord.substring(0, charIndex + 1);
-                charIndex++;
-            }
-
-            let typeSpeed = isDeleting ? 50 : 100;
-
-            if (!isDeleting && charIndex === currentWord.length) {
-                typeSpeed = 2000;
-                isDeleting = true;
-            } else if (isDeleting && charIndex === 0) {
-                isDeleting = false;
-                wordIndex = (wordIndex + 1) % words.length;
-                typeSpeed = 500;
-            }
-
-            setTimeout(typeEffect, typeSpeed);
+<main id="top">
+<section class="hero">
+  <div class="glow" style="width:320px;height:320px;background:#3b82f6;top:12%;left:-80px"></div>
+  <div class="glow" style="width:380px;height:380px;background:#7c5cf6;bottom:0;right:-100px;animation-delay:2s"></div>
+  <div class="wrap">
+    <div>
+      <div class="status"><span class="dot" aria-hidden="true"></span>Open to software internships</div>
+      <h1>I'm <span class="grad">Govinda Kumar</span></h1>
+      <div class="type" id="type" aria-live="off"></div>
+      <p class="sub">Pre-final year B.Tech student in Electronics and Communication Engineering at Haldia Institute of Technology. I turn algorithms into working software, from C++ problem solving to responsive web apps, Python bots and embedded builds. 600+ LeetCode problems solved.</p>
+      <div class="actions">
+        <a class="btn p" href="#projects">View projects</a>
+        <a class="btn" href="resume.pdf" download="Govinda_Kumar_Resume.pdf">Download resume</a>
+        <a class="btn" href="mailto:govindkumarcai123@gmail.com">Email me</a>
+      </div>
+    </div>
+    <div class="win" aria-label="Sample C++ code from the Sudoku Solver project">
+      <div class="bar"><i></i><i></i><i></i><span>sudoku_solver.cpp</span></div>
+<pre><span class="k">bool</span> <span class="f">solve</span>(<span class="k">int</span> g[9][9]) {
+  <span class="k">for</span> (<span class="k">int</span> r = <span class="n">0</span>; r &lt; <span class="n">9</span>; r++)
+    <span class="k">for</span> (<span class="k">int</span> c = <span class="n">0</span>; c &lt; <span class="n">9</span>; c++) {
+      <span class="k">if</span> (g[r][c]) <span class="k">continue</span>;
+      <span class="k">for</span> (<span class="k">int</span> v = <span class="n">1</span>; v &lt;= <span class="n">9</span>; v++)
+        <span class="k">if</span> (<span class="f">isSafe</span>(g, r, c, v)) {
+          g[r][c] = v;
+          <span class="k">if</span> (<span class="f">solve</span>(g)) <span class="k">return true</span>;
+          g[r][c] = <span class="n">0</span>; <span class="c">// backtrack</span>
         }
-        typeEffect();
+      <span class="k">return false</span>;
+    }
+  <span class="k">return true</span>;
+}</pre>
+    </div>
+  </div>
+</section>
 
-        // Mobile Menu
-        const mobileMenuBtn = document.getElementById('mobile-menu-btn');
-        const mobileMenu = document.getElementById('mobile-menu');
-        
-        mobileMenuBtn.addEventListener('click', () => {
-            const open = mobileMenu.classList.toggle('hidden') === false;
-            mobileMenuBtn.setAttribute('aria-expanded', open);
-        });
-        mobileMenu.querySelectorAll('a').forEach(a => a.addEventListener('click', () => {
-            mobileMenu.classList.add('hidden');
-            mobileMenuBtn.setAttribute('aria-expanded', 'false');
-        }));
+<section id="projects">
+  <div class="wrap">
+    <h2 class="rv">Featured <span class="grad">Projects</span></h2>
+    <p class="lede rv">Each project is built to practise a specific skill: algorithms, front-end engineering and real-world tooling.</p>
+    <div class="grid3">
 
-        // Navbar scroll effect
-        const navbar = document.getElementById('navbar');
-        window.addEventListener('scroll', () => {
-            if (window.scrollY > 50) {
-                navbar.classList.add('glass-card');
-            } else {
-                navbar.classList.remove('glass-card');
-            }
-        });
+      <article class="card rv">
+        <div class="art"><div class="sg" id="sg" aria-label="Sudoku grid animation"></div></div>
+        <div class="body">
+          <h3>Sudoku Pro</h3>
+          <div class="tags"><span class="tag">HTML</span><span class="tag">CSS</span><span class="tag">JavaScript</span></div>
+          <p>A browser-based solver that completes user-entered puzzles with a backtracking algorithm, deployed as a responsive web app.</p>
+          <ul><li>Four difficulty levels and a limited hint system</li><li>Move counter and timer</li><li>Keyboard navigation, light and dark theme</li></ul>
+          <div class="links"><a class="btn p" href="https://coder-g45.github.io/suduko-solver-web/" target="_blank" rel="noopener">Live demo</a><a class="btn" href="https://github.com/CODER-G45/suduko-solver-web" target="_blank" rel="noopener">Code</a></div>
+        </div>
+      </article>
 
-        // Particle Background
-        const canvas = document.getElementById('particles-canvas');
-        const ctx = canvas.getContext('2d');
-        
-        let width, height;
-        let particles = [];
-        
-        function resize() {
-            width = canvas.width = window.innerWidth;
-            height = canvas.height = window.innerHeight;
-        }
-        
-        class Particle {
-            constructor() {
-                this.x = Math.random() * width;
-                this.y = Math.random() * height;
-                this.vx = (Math.random() - 0.5) * 0.5;
-                this.vy = (Math.random() - 0.5) * 0.5;
-                this.size = Math.random() * 2;
-                this.opacity = Math.random() * 0.5 + 0.1;
-            }
-            
-            update() {
-                this.x += this.vx;
-                this.y += this.vy;
-                
-                if (this.x < 0 || this.x > width) this.vx *= -1;
-                if (this.y < 0 || this.y > height) this.vy *= -1;
-            }
-            
-            draw() {
-                ctx.fillStyle = `rgba(148, 163, 184, ${this.opacity})`;
-                ctx.beginPath();
-                ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
-                ctx.fill();
-            }
-        }
-        
-        function initParticles() {
-            particles = [];
-            const particleCount = Math.min(window.innerWidth / 10, 100);
-            for (let i = 0; i < particleCount; i++) {
-                particles.push(new Particle());
-            }
-        }
-        
-        function animateParticles() {
-            ctx.clearRect(0, 0, width, height);
-            
-            particles.forEach((particle, i) => {
-                particle.update();
-                particle.draw();
-                
-                particles.slice(i + 1).forEach(other => {
-                    const dx = particle.x - other.x;
-                    const dy = particle.y - other.y;
-                    const distance = Math.sqrt(dx * dx + dy * dy);
-                    
-                    if (distance < 100) {
-                        ctx.strokeStyle = `rgba(148, 163, 184, ${0.1 * (1 - distance / 100)})`;
-                        ctx.lineWidth = 0.5;
-                        ctx.beginPath();
-                        ctx.moveTo(particle.x, particle.y);
-                        ctx.lineTo(other.x, other.y);
-                        ctx.stroke();
-                    }
-                });
-            });
-            
-            if (!document.hidden) requestAnimationFrame(animateParticles);
-        }
-        document.addEventListener("visibilitychange", () => { if (!document.hidden) animateParticles(); });
-        
-        window.addEventListener('resize', () => {
-            resize();
-            initParticles();
-        });
-        
-        resize();
-        initParticles();
-        animateParticles();
+      <article class="card rv">
+        <div class="art"><div class="bars" id="bars" aria-label="Sorting animation"></div></div>
+        <div class="body">
+          <h3>DSA Visualizer</h3>
+          <div class="tags"><span class="tag">HTML</span><span class="tag">CSS</span><span class="tag">JavaScript</span></div>
+          <p>An interactive visualizer that animates Bubble Sort and Selection Sort in real time on random arrays, one step at a time.</p>
+          <ul><li>Renders every comparison and swap</li><li>Freshly generated arrays on each run</li><li>DOM manipulation for the animation</li></ul>
+          <div class="links"><a class="btn p" href="https://coder-g45.github.io/dsa-visualizer/" target="_blank" rel="noopener">Live demo</a><a class="btn" href="https://github.com/CODER-G45/dsa-visualizer" target="_blank" rel="noopener">Code</a></div>
+        </div>
+      </article>
 
-        // Smooth scroll
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function (e) {
-                e.preventDefault();
-                const target = document.querySelector(this.getAttribute('href'));
-                if (target) {
-                    target.scrollIntoView({ behavior: 'smooth', block: 'start' });
-                }
-            });
-        });
-    </script>
+      <article class="card rv">
+        <div class="art"><div class="tbl" aria-label="Discharge data table preview"><b class="t">Gauge</b><b class="t">Vel.</b><b class="t">Area</b><b class="t">Q</b><b>2.41</b><b>0.82</b><b>14.6</b><b>11.9</b><b>2.58</b><b>0.91</b><b>15.2</b><b>13.8</b></div></div>
+        <div class="body">
+          <h3>CWC Daily Discharge Data Sheet</h3>
+          <div class="tags"><span class="tag">HTML</span><span class="tag">CSS</span><span class="tag">JavaScript</span></div>
+          <p>An offline-first tool for recording river discharge gauging data, delivered as a single HTML file with no backend.</p>
+          <ul><li>Station details, gauge readings and velocity table</li><li>Local saving, JSON import and export, full backup</li><li>Print-ready 2-page PDF export</li></ul>
+          <div class="links"><a class="btn p" href="https://github.com/CODER-G45/CWC" target="_blank" rel="noopener">View code</a></div>
+        </div>
+      </article>
+
+    </div>
+
+    <p class="sub2 rv">More projects</p>
+    <div class="minis">
+      <article class="card mini rv">
+        <div class="art"><div class="chat" aria-label="Chat preview"><span class="u">/start</span><span class="r">Choose a coupon category</span><span class="r">Coupon delivered</span></div></div>
+        <div class="body">
+          <h3>Telegram Coupon Bot</h3>
+          <div class="tags"><span class="tag">Python</span><span class="tag">python-telegram-bot</span></div>
+          <p>A multi-category coupon bot with an admin panel and a user wallet system.</p>
+        </div>
+      </article>
+      <article class="card mini rv">
+        <div class="art"><svg class="wave" viewBox="0 0 240 96" aria-label="Signal waveform"><defs><linearGradient id="wg"><stop offset="0" stop-color="#60a5fa"/><stop offset="1" stop-color="#a78bfa"/></linearGradient></defs><path class="w" d="M0 48 C20 4 40 4 60 48 S100 92 120 48 S160 4 180 48 S220 92 240 48"/><path class="w w2" d="M0 48 C15 20 30 20 45 48 S75 76 90 48 S120 20 135 48 S165 76 180 48 S210 20 240 48"/><circle class="led" cx="228" cy="12" r="5"/></svg></div>
+        <div class="body">
+          <h3>Electronics Projects</h3>
+          <div class="tags"><span class="tag">Embedded</span><span class="tag">Analog design</span></div>
+          <p>A WiFi-based smart appliance controller with power status feedback for remote control, and an LM386-based audio amplifier circuit.</p>
+        </div>
+      </article>
+      <article class="card mini rv">
+        <div class="art"><div class="term sm"><em>$</em> ./student_mgmt<br>1. Add Student<br>2. Display All<br>3. Search &nbsp;4. Delete<br><em>&gt;</em> <span class="cur"></span></div></div>
+        <div class="body">
+          <h3>Student Management System</h3>
+          <div class="tags"><span class="tag">C++</span><span class="tag">OOP</span></div>
+          <p>A C++ application built with object-oriented principles to add, search, delete and display student records.</p>
+          <div class="links"><a class="btn" href="https://github.com/CODER-G45/student-management-system" target="_blank" rel="noopener">View code</a></div>
+        </div>
+      </article>
+      <article class="card mini rv">
+        <div class="art"><div class="todo sm" id="todo"><div class="d">Solve 2 LeetCode problems</div><div>Push project to GitHub</div><div>Update resume</div></div></div>
+        <div class="body">
+          <h3>To-Do List Web App</h3>
+          <div class="tags"><span class="tag">HTML</span><span class="tag">CSS</span><span class="tag">JavaScript</span></div>
+          <p>A task manager that saves your list in the browser with Local Storage. Add, complete, delete and clear tasks on any device.</p>
+          <div class="links"><a class="btn p" href="https://coder-g45.github.io/todo-list-project/" target="_blank" rel="noopener">Live demo</a><a class="btn" href="https://github.com/CODER-G45/todo-list-project" target="_blank" rel="noopener">Code</a></div>
+        </div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<section id="skills">
+  <div class="wrap">
+    <h2 class="rv">Technical <span class="grad">Skills</span></h2>
+    <p class="lede rv">The tools and concepts I use to build and solve.</p>
+    <div class="skills">
+      <div class="card rv"><h3>Languages</h3><div class="chips"><span class="chip">C++</span><span class="chip">JavaScript</span><span class="chip">Python</span><span class="chip">SQL (basics)</span></div></div>
+      <div class="card rv"><h3>Data structures and algorithms</h3><div class="chips"><span class="chip">Arrays</span><span class="chip">Strings</span><span class="chip">Linked lists</span><span class="chip">Stacks and queues</span><span class="chip">Trees</span><span class="chip">Graphs</span><span class="chip">Sorting and searching</span><span class="chip">Recursion</span><span class="chip">Backtracking</span><span class="chip">OOP</span><span class="chip">Problem solving</span></div></div>
+      <div class="card rv"><h3>Web development</h3><div class="chips"><span class="chip">HTML</span><span class="chip">CSS</span><span class="chip">JavaScript</span><span class="chip">DOM manipulation</span><span class="chip">Responsive design</span><span class="chip">Local Storage</span></div></div>
+      <div class="card rv"><h3>Developer tools</h3><div class="chips"><span class="chip">Git</span><span class="chip">GitHub</span><span class="chip">GitHub Pages</span><span class="chip">VS Code</span><span class="chip">Command line</span></div></div>
+      <div class="card rv" style="grid-column:1/-1"><h3>Electronics and automation</h3><div class="chips"><span class="chip">Embedded design</span><span class="chip">Analog design</span><span class="chip">WiFi-based appliance control</span><span class="chip">LM386 audio amplifier</span><span class="chip">Telegram bots with python-telegram-bot</span></div></div>
+    </div>
+  </div>
+</section>
+
+<section id="about">
+  <div class="wrap">
+    <h2 class="rv">About <span class="grad">me</span></h2>
+    <p class="lede rv">An electronics degree with a software focus. I like problems where logic and systems meet.</p>
+    <div class="stats">
+      <div class="card stat rv"><b class="grad" data-n="8.6">0</b><span>CGPA, B.Tech ECE</span></div>
+      <div class="card stat rv"><b class="grad" data-n="7">0</b><span>Projects built, web to embedded</span></div>
+      <a class="card stat rv" href="https://leetcode.com/u/SI1GMA/" target="_blank" rel="noopener"><b class="grad" data-n="600" data-s="+">0</b><span>LeetCode problems solved in C++</span></a>
+    </div>
+    <div class="card edu rv">
+      <div><h3 style="font-size:1.1rem;margin-bottom:4px">B.Tech, Electronics and Communication Engineering</h3><p>Haldia Institute of Technology, pre-final year. Expected graduation 2028.</p></div>
+      <a class="btn" href="resume.pdf" download="Govinda_Kumar_Resume.pdf">Download resume</a>
+    </div>
+    <div class="profiles rv">
+      <a class="btn" href="https://leetcode.com/u/SI1GMA/" target="_blank" rel="noopener">LeetCode</a>
+      <a class="btn" href="https://codolio.com/profile/GOVINDA" target="_blank" rel="noopener">Codolio</a>
+      <a class="btn" href="https://github.com/CODER-G45" target="_blank" rel="noopener">GitHub</a>
+    </div>
+  </div>
+</section>
+
+<section id="contact">
+  <div class="glow" style="width:360px;height:360px;background:#7c5cf6;top:20%;left:50%;transform:translateX(-50%)"></div>
+  <div class="wrap">
+    <div class="card cta rv">
+      <h2>Let's <span class="grad">work together</span></h2>
+      <p>I'm looking for a software internship where I can contribute and grow. Email is the quickest way to reach me.</p>
+      <div class="actions">
+        <a class="btn p" href="mailto:govindkumarcai123@gmail.com">govindkumarcai123@gmail.com</a>
+        <a class="btn" href="https://github.com/CODER-G45" target="_blank" rel="noopener">GitHub</a>
+        <a class="btn" href="https://www.linkedin.com/in/govinda-kumar-5a629a36b" target="_blank" rel="noopener">LinkedIn</a>
+        <a class="btn" href="https://leetcode.com/u/SI1GMA/" target="_blank" rel="noopener">LeetCode</a>
+        <a class="btn" href="https://codolio.com/profile/GOVINDA" target="_blank" rel="noopener">Codolio</a>
+      </div>
+    </div>
+  </div>
+</section>
+</main>
+
+<footer><div class="wrap"><span>© 2026 Govinda Kumar</span><a href="#top">Back to top</a></div></footer>
+
+<script>
+const rm=matchMedia('(prefers-reduced-motion: reduce)').matches;
+// header
+const hd=document.getElementById('hd');
+addEventListener('scroll',()=>hd.classList.toggle('s',scrollY>40),{passive:true});
+// typing
+const roles=['Software Developer in the making','C++ and DSA enthusiast','Web Developer','600+ LeetCode problems solved'];
+const tp=document.getElementById('type');let ri=0,ci=0,del=false;
+function tick(){
+  const w=roles[ri];
+  if(rm){tp.textContent=roles[0];return}
+  ci+=del?-1:1;tp.textContent=w.slice(0,ci);
+  let t=del?35:75;
+  if(!del&&ci===w.length){del=true;t=1800}
+  else if(del&&ci===0){del=false;ri=(ri+1)%roles.length;t=400}
+  setTimeout(tick,t);
+}
+tick();
+// reveal + counters
+const io=new IntersectionObserver(es=>es.forEach(e=>{
+  if(!e.isIntersecting)return;
+  e.target.classList.add('in');io.unobserve(e.target);
+  e.target.querySelectorAll('[data-n]').forEach(count);
+  if(e.target.matches('[data-n]'))count(e.target);
+}),{threshold:.2});
+document.querySelectorAll('.rv').forEach(el=>io.observe(el));
+function count(el){
+  const to=parseFloat(el.dataset.n),dec=String(el.dataset.n).includes('.')?1:0,t0=performance.now();
+  (function s(t){const p=Math.min((t-t0)/1200,1);el.textContent=(dec?(to*p).toFixed(dec):Math.round(to*p))+(p>=1?(el.dataset.s||''):'');if(p<1&&!rm)requestAnimationFrame(s);else el.textContent=to.toFixed(dec)+(el.dataset.s||'')})(t0);
+}
+// card spotlight
+document.querySelectorAll('.card').forEach(c=>c.addEventListener('pointermove',e=>{
+  const r=c.getBoundingClientRect();c.style.setProperty('--mx',(e.clientX-r.left)+'px');c.style.setProperty('--my',(e.clientY-r.top)+'px');
+}));
+// sudoku mini grid
+(function(){
+  const g=document.getElementById('sg'),pre='534678912672195348198342567859761423426853791713924856961537284287419635345286179';
+  const given=new Set([0,1,4,9,12,13,14,19,20,22,23,30,31,34,37,44,49,52,53,54,55,60,66,67,68,72,76,78,79,80]);
+  for(let i=0;i<81;i++){const b=document.createElement('b');if(given.has(i))b.textContent=pre[i];else{b.dataset.v=pre[i]}g.appendChild(b)}
+  if(rm)return;
+  function run(){
+    const cells=[...g.querySelectorAll('b[data-v]')];
+    cells.forEach((c,i)=>{c.textContent='';c.className='';setTimeout(()=>{c.textContent=c.dataset.v;c.className='s'},300+i*90)});
+    setTimeout(run,300+cells.length*90+3500);
+  }
+  const o=new IntersectionObserver(e=>{if(e[0].isIntersecting){run();o.disconnect()}});o.observe(g);
+})();
+
+// sorting bars
+(function(){
+  const box=document.getElementById('bars'),N=16;let a=[],i=0,j=0;
+  function fresh(){a=Array.from({length:N},()=>12+Math.random()*88);i=0;j=0}
+  box.innerHTML='<i></i>'.repeat(N);const els=[...box.children];
+  function paint(h){els.forEach((e,k)=>{e.style.height=a[k]+'%';e.className=k===h||k===h+1?'h':''})}
+  fresh();paint(-1);if(rm)return;
+  setInterval(()=>{
+    if(i>=N-1){fresh();paint(-1);return}
+    if(a[j]>a[j+1])[a[j],a[j+1]]=[a[j+1],a[j]];
+    paint(j);j++;if(j>=N-1-i){j=0;i++}
+  },110);
+})();
+// todo toggles
+(function(){
+  const items=[...document.querySelectorAll('#todo div')];
+  items.forEach(d=>d.addEventListener('click',()=>d.classList.toggle('d')));
+  if(rm)return;let k=0;
+  setInterval(()=>{items[k%items.length].classList.toggle('d');k++},1800);
+})();
+// particles
+(function(){
+  const cv=document.getElementById('fx'),x=cv.getContext('2d');let W,H,P=[];
+  function size(){W=cv.width=innerWidth;H=cv.height=innerHeight;P=Array.from({length:Math.min(innerWidth/14,70)},()=>({x:Math.random()*W,y:Math.random()*H,vx:(Math.random()-.5)*.35,vy:(Math.random()-.5)*.35,r:Math.random()*1.6+.4}))}
+  function draw(){
+    x.clearRect(0,0,W,H);
+    P.forEach((p,i)=>{
+      p.x+=p.vx;p.y+=p.vy;if(p.x<0||p.x>W)p.vx*=-1;if(p.y<0||p.y>H)p.vy*=-1;
+      x.fillStyle='rgba(148,163,184,.45)';x.beginPath();x.arc(p.x,p.y,p.r,0,6.283);x.fill();
+      for(let j=i+1;j<P.length;j++){const q=P[j],d=Math.hypot(p.x-q.x,p.y-q.y);if(d<110){x.strokeStyle='rgba(124,140,246,'+(.16*(1-d/110))+')';x.lineWidth=.6;x.beginPath();x.moveTo(p.x,p.y);x.lineTo(q.x,q.y);x.stroke()}}
+    });
+    if(!rm&&!document.hidden)requestAnimationFrame(draw);
+  }
+  addEventListener('resize',size);document.addEventListener('visibilitychange',()=>{if(!document.hidden)draw()});
+  size();draw();
+})();
+</script>
 </body>
 </html>
